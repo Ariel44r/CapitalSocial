@@ -10,7 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var loginLabel: UIButton!
+    //MARK: actionButtons
+    @IBAction func buttonLogInFacebook(_ sender: Any) {
+    }
+    @IBAction func buttonLogInPhone(_ sender: Any) {
+    }
+    
+    //MARK: outlets
+    @IBOutlet weak var textFieldPhone: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

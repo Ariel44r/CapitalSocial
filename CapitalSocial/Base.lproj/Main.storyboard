@@ -21,16 +21,28 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyG-qD-2Rg">
                                 <rect key="frame" x="16" y="551" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.31961371163575747" blue="0.5980192660564948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Login">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="hoU-Br-PV1"/>
+                                </constraints>
+                                <state key="normal" title="Login with Phone">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonLogInPhone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fZu-ZS-Vnw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a96-t5-SRP">
                                 <rect key="frame" x="16" y="204" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GM8-G6-wGz"/>
+                                </constraints>
                                 <state key="normal" title="Login with Facebook">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonLogInFacebook:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EKw-Gb-ccb"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="LogoSplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="vbT-QN-Z6w">
                                 <rect key="frame" x="16" y="60" width="343" height="99"/>
@@ -41,7 +53,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="       Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-LZ-YGr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="       Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-LZ-YGr">
                                 <rect key="frame" x="72" y="408" width="287" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.094962476554267927" blue="0.62553996209267826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,15 +62,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telefono" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-jJ-dTo">
                                 <rect key="frame" x="35" y="405" width="32" height="26"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IconoFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="Rvn-jC-HT1">
-                                <rect key="frame" x="42" y="210" width="16" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconoFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="Rvn-jC-HT1">
+                                <rect key="frame" x="38" y="204" width="20" height="36"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a96-t5-SRP" firstAttribute="leading" secondItem="Rvn-jC-HT1" secondAttribute="trailing" constant="-42" id="0cX-xC-YG3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uyG-qD-2Rg" secondAttribute="trailing" constant="16" id="2ql-H2-aA0"/>
-                            <constraint firstItem="Rvn-jC-HT1" firstAttribute="top" secondItem="a96-t5-SRP" secondAttribute="bottom" constant="-24" id="84P-6w-idd"/>
+                            <constraint firstItem="Rvn-jC-HT1" firstAttribute="top" secondItem="a96-t5-SRP" secondAttribute="bottom" constant="-30" id="84P-6w-idd"/>
                             <constraint firstItem="Pka-jJ-dTo" firstAttribute="top" secondItem="a96-t5-SRP" secondAttribute="bottom" constant="171" id="AfK-rG-i9Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vbT-QN-Z6w" secondAttribute="trailing" constant="16" id="EEI-PW-ozZ"/>
                             <constraint firstItem="a96-t5-SRP" firstAttribute="top" secondItem="vbT-QN-Z6w" secondAttribute="bottom" constant="45" id="Jj0-J3-td6"/>
@@ -85,7 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pBP-xM-ZQj"/>
                     <connections>
-                        <outlet property="loginLabel" destination="uyG-qD-2Rg" id="AHc-oS-waR"/>
+                        <outlet property="textFieldPhone" destination="Gc7-lw-skm" id="z3J-YD-bQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

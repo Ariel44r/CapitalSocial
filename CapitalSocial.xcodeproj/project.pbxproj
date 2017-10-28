@@ -34,6 +34,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F1F2AE91FA3FDAC0032D6A0 /* PromoPapaJohns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoPapaJohns.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoPapaJohns.png; sourceTree = "<group>"; };
+		4F1F2AEA1FA3FDAC0032D6A0 /* PromoCinepolis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoCinepolis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoCinepolis.png; sourceTree = "<group>"; };
+		4F1F2AEB1FA3FDAC0032D6A0 /* PromoWingstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoWingstop.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoWingstop.png; sourceTree = "<group>"; };
+		4F1F2AEC1FA3FDAC0032D6A0 /* PromoZonaFitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoZonaFitness.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoZonaFitness.png; sourceTree = "<group>"; };
+		4F1F2AED1FA3FDAC0032D6A0 /* PromoChilis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoChilis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoChilis.png; sourceTree = "<group>"; };
+		4F1F2AF11FA3FDAC0032D6A0 /* PromoBurguerKing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBurguerKing.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBurguerKing.png; sourceTree = "<group>"; };
+		4F1F2AF21FA3FDAC0032D6A0 /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
+		4F1F2AF31FA3FDAC0032D6A0 /* PromoItaliannis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoItaliannis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoItaliannis.png; sourceTree = "<group>"; };
+		4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoTizoncito.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoTizoncito.png; sourceTree = "<group>"; };
+		4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoIdea.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoIdea.png; sourceTree = "<group>"; };
 		4FEC9CBC1FA2B47D000643EB /* CapitalSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEC9CC11FA2B47D000643EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F1F2AE81FA3FD7E0032D6A0 /* Promos */ = {
+			isa = PBXGroup;
+			children = (
+				4F1F2AF21FA3FDAC0032D6A0 /* PromoBenavides.png */,
+				4F1F2AF11FA3FDAC0032D6A0 /* PromoBurguerKing.png */,
+				4F1F2AED1FA3FDAC0032D6A0 /* PromoChilis.png */,
+				4F1F2AEA1FA3FDAC0032D6A0 /* PromoCinepolis.png */,
+				4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */,
+				4F1F2AF31FA3FDAC0032D6A0 /* PromoItaliannis.png */,
+				4F1F2AE91FA3FDAC0032D6A0 /* PromoPapaJohns.png */,
+				4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */,
+				4F1F2AEB1FA3FDAC0032D6A0 /* PromoWingstop.png */,
+				4F1F2AEC1FA3FDAC0032D6A0 /* PromoZonaFitness.png */,
+			);
+			path = Promos;
+			sourceTree = "<group>";
+		};
 		4FEC9CB31FA2B47D000643EB = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +130,7 @@
 				4FEC9CC61FA2B47E000643EB /* Assets.xcassets */,
 				4FEC9CC81FA2B47E000643EB /* LaunchScreen.storyboard */,
 				4FEC9CCB1FA2B47E000643EB /* Info.plist */,
+				4F1F2AE81FA3FD7E0032D6A0 /* Promos */,
 			);
 			path = CapitalSocial;
 			sourceTree = "<group>";
