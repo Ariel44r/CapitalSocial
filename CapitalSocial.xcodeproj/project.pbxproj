@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F2B021FA405B60032D6A0 /* Utils.swift */; };
 		4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */; };
 		4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC11FA2B47D000643EB /* ViewController.swift */; };
 		4FEC9CC51FA2B47D000643EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC31FA2B47D000643EB /* Main.storyboard */; };
@@ -14,6 +15,7 @@
 		4FEC9CCA1FA2B47E000643EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC81FA2B47E000643EB /* LaunchScreen.storyboard */; };
 		4FEC9CD51FA2B47E000643EB /* CapitalSocialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CD41FA2B47E000643EB /* CapitalSocialTests.swift */; };
 		4FEC9CE01FA2B47E000643EB /* CapitalSocialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CDF1FA2B47E000643EB /* CapitalSocialUITests.swift */; };
+		9A5A11B2A4C400176CCBD1F2 /* Pods_CapitalSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1F2AE91FA3FDAC0032D6A0 /* PromoPapaJohns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoPapaJohns.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoPapaJohns.png; sourceTree = "<group>"; };
 		4F1F2AEA1FA3FDAC0032D6A0 /* PromoCinepolis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoCinepolis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoCinepolis.png; sourceTree = "<group>"; };
 		4F1F2AEB1FA3FDAC0032D6A0 /* PromoWingstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoWingstop.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoWingstop.png; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		4F1F2AF31FA3FDAC0032D6A0 /* PromoItaliannis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoItaliannis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoItaliannis.png; sourceTree = "<group>"; };
 		4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoTizoncito.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoTizoncito.png; sourceTree = "<group>"; };
 		4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoIdea.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoIdea.png; sourceTree = "<group>"; };
+		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4FEC9CBC1FA2B47D000643EB /* CapitalSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEC9CC11FA2B47D000643EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 		4FEC9CDB1FA2B47E000643EB /* CapitalSocialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CapitalSocialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEC9CDF1FA2B47E000643EB /* CapitalSocialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapitalSocialUITests.swift; sourceTree = "<group>"; };
 		4FEC9CE11FA2B47E000643EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		860AFE2F0D4A5CFAB4A887B9 /* Pods-CapitalSocial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalSocial.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalSocial/Pods-CapitalSocial.debug.xcconfig"; sourceTree = "<group>"; };
+		F5152DAB41F8CC66DF9E47CD /* Pods-CapitalSocial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CapitalSocial.release.xcconfig"; path = "Pods/Target Support Files/Pods-CapitalSocial/Pods-CapitalSocial.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A5A11B2A4C400176CCBD1F2 /* Pods_CapitalSocial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A23467CDB756149731A8B46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4F1F2AE81FA3FD7E0032D6A0 /* Promos */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +116,14 @@
 			path = Promos;
 			sourceTree = "<group>";
 		};
+		4F1F2B041FA405BD0032D6A0 /* UtilsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F1F2B021FA405B60032D6A0 /* Utils.swift */,
+			);
+			path = UtilsFiles;
+			sourceTree = "<group>";
+		};
 		4FEC9CB31FA2B47D000643EB = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +131,8 @@
 				4FEC9CD31FA2B47E000643EB /* CapitalSocialTests */,
 				4FEC9CDE1FA2B47E000643EB /* CapitalSocialUITests */,
 				4FEC9CBD1FA2B47D000643EB /* Products */,
+				C7C39DDF9F8D5AA479F6F022 /* Pods */,
+				2A23467CDB756149731A8B46 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +152,7 @@
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
+				4F1F2B041FA405BD0032D6A0 /* UtilsFiles */,
 				4FEC9CC61FA2B47E000643EB /* Assets.xcassets */,
 				4FEC9CC81FA2B47E000643EB /* LaunchScreen.storyboard */,
 				4FEC9CCB1FA2B47E000643EB /* Info.plist */,
@@ -153,6 +179,15 @@
 			path = CapitalSocialUITests;
 			sourceTree = "<group>";
 		};
+		C7C39DDF9F8D5AA479F6F022 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				860AFE2F0D4A5CFAB4A887B9 /* Pods-CapitalSocial.debug.xcconfig */,
+				F5152DAB41F8CC66DF9E47CD /* Pods-CapitalSocial.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4FEC9CE41FA2B47E000643EB /* Build configuration list for PBXNativeTarget "CapitalSocial" */;
 			buildPhases = (
+				38F199D3AA2B071E133335A5 /* [CP] Check Pods Manifest.lock */,
 				4FEC9CB81FA2B47D000643EB /* Sources */,
 				4FEC9CB91FA2B47D000643EB /* Frameworks */,
 				4FEC9CBA1FA2B47D000643EB /* Resources */,
+				5C88A63C58415B1956DCA16D /* [CP] Embed Pods Frameworks */,
+				79BD39BC1F1379118DBFF632 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,6 +320,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38F199D3AA2B071E133335A5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CapitalSocial-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C88A63C58415B1956DCA16D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CapitalSocial/Pods-CapitalSocial-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapitalSocial/Pods-CapitalSocial-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79BD39BC1F1379118DBFF632 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CapitalSocial/Pods-CapitalSocial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4FEC9CB81FA2B47D000643EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -289,6 +381,7 @@
 			files = (
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
+				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +545,7 @@
 		};
 		4FEC9CE51FA2B47E000643EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 860AFE2F0D4A5CFAB4A887B9 /* Pods-CapitalSocial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +562,7 @@
 		};
 		4FEC9CE61FA2B47E000643EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5152DAB41F8CC66DF9E47CD /* Pods-CapitalSocial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     //MARK: actionButtons
     @IBAction func buttonLogInFacebook(_ sender: Any) {
+        Constants.PKHUD.viewProgressHUD()
     }
     @IBAction func buttonLogInPhone(_ sender: Any) {
     }
