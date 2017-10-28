@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBAction func buttonLogInFacebook(_ sender: Any) {
     }
     @IBAction func buttonLogInPhone(_ sender: Any) {
+        ServerManager.postRequest(textFieldPhone.text!)
     }
     
     //MARK: outlets
