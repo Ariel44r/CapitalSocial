@@ -35,9 +35,11 @@ class ViewController: UIViewController {
         ServerManager.postRequest(textFieldPhone.text!) {
             response, error in
             if let response = response {
-                debugPrint(response)
+                StaticMethod.PKHUD.successHUD()
+                debugPrint(response.Descripcion)
             }
             if let error = error {
+                StaticMethod.PKHUD.errorAndTextHUD("Validation failure, please try again later :'(")
                 debugPrint(error)
             }
         }

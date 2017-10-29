@@ -10,9 +10,9 @@ import Foundation
 import Alamofire
 
 class ServerManager {
-    static func postRequest(_ phone: String,_ completion: @escaping (_ : String?, _ : Error?) -> Void) {
+    static func postRequest(_ phone: String,_ completion: @escaping (_ : Response?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
-        let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
+        let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl + "s"))!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         let parameters: Any = [
@@ -28,14 +28,16 @@ class ServerManager {
                 case .success:
                     if let json = response.result.value {
                         debugPrint("JSON: \(json)")
-                        StaticMethod.PKHUD.successHUD()
+                        //callJSONToObject
+                        let response = StaticMethod.JSONManager.JSONToObject(json as! NSDictionary)
                         OperationQueue.main.addOperation({
-                            completion("HOLA", nil)
+                            completion(response, nil)
                         })
                 }
                 case .failure(let error):
-                    debugPrint("Error at receive response: \(error)")
-                    StaticMethod.PKHUD.errorAndTextHUD("Validation failure, please try again later :'(")
+                    OperationQueue.main.addOperation({
+                        completion(nil, error)
+                    })
             }
         }
     }

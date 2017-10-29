@@ -21,8 +21,15 @@ class StaticMethod {
             }
             return nil
         }
-        static func JSONToObject() {
-            
+        static func JSONToObject(_ JSON: NSDictionary) -> Response? {
+            var response: Response?
+            if let CodigoRespuesta = JSON["CodigoRespuesta"] as? String {
+                if let Descripcion = JSON["Descripcion"] as? String {
+                    response = Response(CodigoRespuesta,Descripcion,nil,nil)
+                    return response
+                }
+            }
+            return response
         }
     }
     struct PKHUD {

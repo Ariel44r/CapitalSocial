@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F2B021FA405B60032D6A0 /* Utils.swift */; };
+		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */; };
 		4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC11FA2B47D000643EB /* ViewController.swift */; };
@@ -49,7 +50,8 @@
 		4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoTizoncito.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoTizoncito.png; sourceTree = "<group>"; };
 		4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoIdea.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoIdea.png; sourceTree = "<group>"; };
 		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlamoFire.swift; path = AlamoFire/AlamoFire.swift; sourceTree = "<group>"; };
+		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
+		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FEC9CBC1FA2B47D000643EB /* CapitalSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEC9CC11FA2B47D000643EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,15 @@
 			path = UtilsFiles;
 			sourceTree = "<group>";
 		};
+		4F63B36B1FA5C5F10053F974 /* ServerManager */ = {
+			isa = PBXGroup;
+			children = (
+				4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */,
+				4F63B36C1FA5C6510053F974 /* ResponseObj.swift */,
+			);
+			path = ServerManager;
+			sourceTree = "<group>";
+		};
 		4FEC9CB31FA2B47D000643EB = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +165,7 @@
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
-				4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */,
+				4F63B36B1FA5C5F10053F974 /* ServerManager */,
 				4F1F2B041FA405BD0032D6A0 /* UtilsFiles */,
 				4FEC9CC61FA2B47E000643EB /* Assets.xcassets */,
 				4FEC9CC81FA2B47E000643EB /* LaunchScreen.storyboard */,
@@ -386,6 +397,7 @@
 			files = (
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
+				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
 				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
 			);
