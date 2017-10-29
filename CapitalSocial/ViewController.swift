@@ -33,9 +33,9 @@ class ViewController: UIViewController {
     //MARK: Methods
     func logInPhoneTrigger() {
         ServerManager.postRequest(textFieldPhone.text!) {
-            results, error in
-            if let results = results {
-                debugPrint(results)
+            response, error in
+            if let response = response {
+                debugPrint(response)
             }
             if let error = error {
                 debugPrint(error)

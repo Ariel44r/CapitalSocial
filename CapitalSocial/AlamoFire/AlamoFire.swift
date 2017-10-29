@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 class ServerManager {
-    static func postRequest(_ phone: String,_ completion: @escaping (_ results: String?, _ error: Error?) -> Void) {
+    static func postRequest(_ phone: String,_ completion: @escaping (_ : String?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
         let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
         var urlRequest = URLRequest(url: url)
