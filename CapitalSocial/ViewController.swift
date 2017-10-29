@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBAction func buttonLogInFacebook(_ sender: Any) {
     }
     @IBAction func buttonLogInPhone(_ sender: Any) {
-        ServerManager.postRequest(textFieldPhone.text!)
+        logInPhoneTrigger()
     }
     
     //MARK: outlets
@@ -28,6 +28,19 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Methods
+    func logInPhoneTrigger() {
+        ServerManager.postRequest(textFieldPhone.text!) {
+            results, error in
+            if let results = results {
+                debugPrint(results)
+            }
+            if let error = error {
+                debugPrint(error)
+            }
+        }
     }
 
 
