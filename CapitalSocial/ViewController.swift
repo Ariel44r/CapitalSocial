@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBAction func buttonLogInFacebook(_ sender: Any) {
     }
     @IBAction func buttonLogInPhone(_ sender: Any) {
-        logInPhoneTrigger()
+        logInPhoneRequest()
     }
     
     //MARK: outlets
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     //MARK: Methods
-    func logInPhoneTrigger() {
+    func logInPhoneRequest() {
         ServerManager.postRequest(textFieldPhone.text!) {
             response, error in
             if let response = response {

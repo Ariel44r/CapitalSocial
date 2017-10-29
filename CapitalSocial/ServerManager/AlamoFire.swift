@@ -12,7 +12,7 @@ import Alamofire
 class ServerManager {
     static func postRequest(_ phone: String,_ completion: @escaping (_ : Response?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
-        let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl + "s"))!
+        let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         let parameters: Any = [
