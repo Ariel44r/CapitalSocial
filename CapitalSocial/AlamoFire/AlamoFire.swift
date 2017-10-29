@@ -11,25 +11,29 @@ import Alamofire
 
 class ServerManager {
     static func postRequest(_ phone: String) {
-        Constants.PKHUD.ViewProgressText("Sending request")
+        StaticMethod.PKHUD.viewProgressHUD()
         let url = URL(string: "http://209.222.19.75/wsAutorizador/api/autorizador/AUTORIZADOR_ValidaUsuario")!
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
-        let parameters = [
+        let parameters: Any = [
             "Telefono":phone
         ]
-        do {
-            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: [])
-        } catch {
-            debugPrint(error)
+        if let parametersData = StaticMethod.JSONManager.JSONData(parameters) {
+            urlRequest.httpBody = parametersData
         }
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        Alamofire.request(urlRequest).responseJSON{
+        Alamofire.request(urlRequest).validate().responseJSON{
             response in
-            //debugPrint(response.result)
-            if let json = response.result.value {
-                debugPrint("JSON: \(json)")
-                Constants.PKHUD.dismissHUD()
+            switch response.result {
+            case .success:
+                if let json = response.result.value {
+                    debugPrint("Validation Successful")
+                    debugPrint("JSON: \(json)")
+                    StaticMethod.PKHUD.dismissHUD()
+                }
+            case .failure(let error):
+                debugPrint("Error at receive response: \(error)")
+                StaticMethod.PKHUD.errorAndTextHUD("Error: Validation failure, please try again later :'(")
             }
         }
     }
