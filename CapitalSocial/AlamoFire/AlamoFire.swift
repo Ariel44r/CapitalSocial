@@ -30,6 +30,7 @@ class ServerManager {
                     debugPrint("Validation Successful")
                     debugPrint("JSON: \(json)")
                     StaticMethod.PKHUD.dismissHUD()
+                    StaticMethod.PKHUD.successHUD()
                 }
             case .failure(let error):
                 debugPrint("Error at receive response: \(error)")

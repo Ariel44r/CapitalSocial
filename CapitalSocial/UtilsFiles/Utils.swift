@@ -49,5 +49,8 @@ class StaticMethod {
                 HUD.hide(afterDelay: 4.0)
             })
         }
+        static func successHUD() {
+            HUD.flash(.success, delay: 1.5)
+        }
     }
 }
