@@ -21,7 +21,7 @@ class StaticMethod {
             }
             return nil
         }
-        static func JSONObject() {
+        static func JSONToObject() {
             
         }
     }
@@ -52,5 +52,12 @@ class StaticMethod {
         static func successHUD() {
             HUD.flash(.success, delay: 1.5)
         }
+    }
+}
+
+class Constants {
+    struct LogInConstants {
+        static let URL = "http://209.222.19.75/wsAutorizador/api/autorizador/"
+        static let endUrl = "AUTORIZADOR_ValidaUsuario"
     }
 }
