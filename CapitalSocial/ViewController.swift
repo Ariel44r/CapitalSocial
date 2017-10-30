@@ -36,6 +36,7 @@ class ViewController: UIViewController {
             response, error in
             if let response = response {
                 StaticMethod.PKHUD.successHUD()
+                self.performSegue(withIdentifier: "promosSegue", sender: nil)
                 debugPrint(response.Descripcion)
             }
             if let error = error {
@@ -44,7 +45,5 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
 }
 
