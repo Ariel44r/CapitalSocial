@@ -11,5 +11,6 @@ import UIKit
 class PromosCell: UICollectionViewCell {
     
     @IBOutlet weak var promoImage: UIImageView!
-
+    
+    @IBOutlet weak var promoLabel: UILabel!
 }

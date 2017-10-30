@@ -60,6 +60,11 @@ class StaticMethod {
             HUD.flash(.success, delay: 1.5)
         }
     }
+    struct StringProcess {
+        static func replaceStringWithString(_ string: String, _ ocurrensOf: String, _ replaceWith: String) -> String {
+            return (string.replacingOccurrences(of: ocurrensOf, with: replaceWith))
+        }
+    }
 }
 
 class Constants {

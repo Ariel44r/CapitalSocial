@@ -41,7 +41,7 @@ extension CollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath) as! PromosCell
         //cell.backgroundColor = UIColor.cyan
         cell.promoImage.image = UIImage(named: promos[indexPath.item] + ".png")
-        debugPrint("\(promos[indexPath.item]).png")
+        cell.promoLabel.text = StaticMethod.StringProcess.replaceStringWithString(promos[indexPath.item], "Promo", "")
         return cell
     }
     
