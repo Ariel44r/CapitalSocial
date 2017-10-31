@@ -14,7 +14,7 @@ class PromosProcess {
     
     static func searchFilter(_ searchTerm: String, completion : @escaping (_ results: [String]?) -> Void) {
         var searchPromoForName = [String]()
-        if searchTerm == "" {
+        if searchTerm == "" || searchTerm == "\n" {
             searchPromoForName = promos
         } else {
             for promo in promos {
