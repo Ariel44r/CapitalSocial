@@ -10,22 +10,33 @@ import UIKit
 
 class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    var promos = ["PromoBenavides", "PromoBurguerKing", "PromoChilis", "PromoCinepolis", "PromoIdea", "PromoItaliannis", "PromoPapaJohns", "PromoTizoncito", "PromoWingstop", "PromoZonaFitness"]
+    var promos = [String]()
     let reusableIdentifier = "Cell"
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-
-
+    
+    //MARK: outlets
+    @IBOutlet weak var promoCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        refreshPromos("")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshPromos(_ searchTerm: String) {
+        PromosProcess.searchFilter(searchTerm) {
+            results in
+            if let results = results {
+                self.promos = results
+            }
+            self.promoCollection.reloadData()
+        }
     }
 
 }
@@ -45,7 +56,6 @@ extension CollectionViewController {
         return cell
     }
     
-    
 }
 
 //MARK: UICollectionViewDelegateFlowLayout
@@ -64,6 +74,32 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
+    }
+    
+}
+
+//MARK: UITextFieldDelegate
+extension CollectionViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        textField.addSubview(activityIndicator)
+        activityIndicator.frame = textField.bounds
+        activityIndicator.startAnimating()
+        
+        
+        var newText:String
+        if(string != ""){
+            newText = textField.text! + string
+        }else{
+            newText = textField.text!.substring(to: textField.text!.index(before: textField.text!.endIndex))
+        }
+        activityIndicator.removeFromSuperview()
+        refreshPromos(newText)
+        
+        //textField.text = nil
+        //textField.resignFirstResponder()
+        return true
     }
     
 }

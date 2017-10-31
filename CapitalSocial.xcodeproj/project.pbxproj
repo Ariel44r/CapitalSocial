@@ -12,6 +12,7 @@
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
 		4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */; };
+		4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD2501E1FA808F10019254C /* PromosProcess.swift */; };
 		4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */; };
 		4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC11FA2B47D000643EB /* ViewController.swift */; };
 		4FEC9CC51FA2B47D000643EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FEC9CC31FA2B47D000643EB /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromosCell.swift; sourceTree = "<group>"; };
+		4FD2501E1FA808F10019254C /* PromosProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromosProcess.swift; sourceTree = "<group>"; };
 		4FEC9CBC1FA2B47D000643EB /* CapitalSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapitalSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FEC9CC11FA2B47D000643EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */,
+				4FD2501E1FA808F10019254C /* PromosProcess.swift */,
 				4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */,
 			);
 			path = CollectionControllerFiles;
@@ -414,6 +417,7 @@
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
+				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,
 				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
 				4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */,
 			);

@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-w8-SpK">
-                                <rect key="frame" x="0.0" y="49" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tL2-Pk-3Ah">
                                     <size key="itemSize" width="50" height="50"/>
@@ -163,16 +163,33 @@
                                     <outlet property="delegate" destination="2mT-VF-w0n" id="Naj-nT-PtH"/>
                                 </connections>
                             </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Promo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-xb-llO">
+                                <rect key="frame" x="88" y="30" width="200" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2mT-VF-w0n" id="zcZ-4a-DRT"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="PRI-F8-STP" secondAttribute="top" constant="29" id="Mgw-tv-bUe"/>
+                            <constraint firstItem="NQN-xb-llO" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" constant="88" id="BGC-iC-9Mj"/>
+                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="PRI-F8-STP" secondAttribute="top" constant="55" id="Mgw-tv-bUe"/>
+                            <constraint firstItem="NQN-xb-llO" firstAttribute="top" secondItem="PRI-F8-STP" secondAttribute="top" constant="10" id="P3a-eH-6xh"/>
+                            <constraint firstItem="PRI-F8-STP" firstAttribute="bottom" secondItem="NQN-xb-llO" secondAttribute="bottom" constant="607" id="U62-Jr-bAC"/>
                             <constraint firstItem="bSE-w8-SpK" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" id="UXa-Ny-ob3"/>
+                            <constraint firstItem="PRI-F8-STP" firstAttribute="trailing" secondItem="NQN-xb-llO" secondAttribute="trailing" constant="87" id="WYZ-hf-Ifh"/>
                             <constraint firstItem="PRI-F8-STP" firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" id="ezP-bs-zHV"/>
                             <constraint firstItem="PRI-F8-STP" firstAttribute="trailing" secondItem="bSE-w8-SpK" secondAttribute="trailing" id="jaD-g3-Ipw"/>
+                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="NQN-xb-llO" secondAttribute="bottom" constant="15" id="l8h-25-57w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PRI-F8-STP"/>
                     </view>
+                    <connections>
+                        <outlet property="promoCollection" destination="bSE-w8-SpK" id="hxH-nW-5jl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRX-Ri-jgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

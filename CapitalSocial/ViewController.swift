@@ -40,7 +40,7 @@ class ViewController: UIViewController {
                 debugPrint(response.Descripcion)
             }
             if let error = error {
-                StaticMethod.PKHUD.errorAndTextHUD("Validation failure, please try again later :'(")
+                StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.validationFailed)
                 debugPrint(error)
             }
         }
