@@ -56,6 +56,14 @@ class StaticMethod {
                 HUD.hide(afterDelay: 4.0)
             })
         }
+        static func failedConnectionTextHUD(_ text: String) {
+            HUD.show(.error)
+            HUD.hide(afterDelay: 1.5, completion: {
+                error in
+                HUD.show(.label(text))
+                HUD.hide(afterDelay: 4.0)
+            })
+        }
         static func successHUD() {
             HUD.flash(.success, delay: 1.5)
         }
@@ -63,6 +71,12 @@ class StaticMethod {
     struct StringProcess {
         static func replaceStringWithString(_ string: String, _ ocurrensOf: String, _ replaceWith: String) -> String {
             return (string.replacingOccurrences(of: ocurrensOf, with: replaceWith))
+        }
+        static func stringContainString(_ string: String, _ ocurrence: String) -> Bool {
+            if string.range(of:ocurrence) != nil {
+                return true
+            }
+            return false
         }
     }
 }

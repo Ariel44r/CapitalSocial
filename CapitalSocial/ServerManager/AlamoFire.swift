@@ -35,10 +35,15 @@ class ServerManager {
                         })
                 }
                 case .failure(let error):
-                    OperationQueue.main.addOperation({
-                        completion(nil, error)
-                    })
+                    if availableConnection(error.localizedDescription) {
+                        StaticMethod.PKHUD.failedConnectionTextHUD("The Internet connection appears to be offline :'(")
+                    } else {
+                        OperationQueue.main.addOperation({completion(nil, error)})
+                    }
             }
         }
+    }
+    static func availableConnection(_ str: String) -> Bool {
+        return (StaticMethod.StringProcess.stringContainString(str, "The Internet connection appears to be offline"))
     }
 }
