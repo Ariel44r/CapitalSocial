@@ -126,7 +126,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="599"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-w8-SpK">
-                                        <rect key="frame" x="8" y="0.0" width="375" height="599"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tL2-Pk-3Ah">
                                             <size key="itemSize" width="50" height="50"/>
@@ -178,9 +178,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="Mry-rL-lfh" secondAttribute="top" id="1BP-QY-Vcw"/>
-                                    <constraint firstAttribute="trailing" secondItem="bSE-w8-SpK" secondAttribute="trailing" constant="-8" id="5KV-zW-OTl"/>
+                                    <constraint firstAttribute="trailing" secondItem="bSE-w8-SpK" secondAttribute="trailing" id="5KV-zW-OTl"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="width" secondItem="Mry-rL-lfh" secondAttribute="width" id="C4Z-i9-hpW"/>
-                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" constant="8" id="ajg-Ta-tg1"/>
+                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" id="ajg-Ta-tg1"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="height" secondItem="Mry-rL-lfh" secondAttribute="height" id="iOe-r5-ad9"/>
                                     <constraint firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" id="mrd-Jg-c38"/>
                                 </constraints>
