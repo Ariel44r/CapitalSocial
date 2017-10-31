@@ -36,7 +36,7 @@ class ServerManager {
                 }
                 case .failure(let error):
                     if availableConnection(error.localizedDescription) {
-                        StaticMethod.PKHUD.failedConnectionTextHUD("The Internet connection appears to be offline :'(")
+                        StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.connectionFailed)
                     } else {
                         OperationQueue.main.addOperation({completion(nil, error)})
                     }

@@ -56,14 +56,6 @@ class StaticMethod {
                 HUD.hide(afterDelay: 4.0)
             })
         }
-        static func failedConnectionTextHUD(_ text: String) {
-            HUD.show(.error)
-            HUD.hide(afterDelay: 1.5, completion: {
-                error in
-                HUD.show(.label(text))
-                HUD.hide(afterDelay: 4.0)
-            })
-        }
         static func successHUD() {
             HUD.flash(.success, delay: 1.5)
         }
@@ -85,5 +77,8 @@ class Constants {
     struct LogInConstants {
         static let URL = "http://209.222.19.75/wsAutorizador/api/autorizador/"
         static let endUrl = "AUTORIZADOR_ValidaUsuario"
+    }
+    struct messagesToUser {
+        static let connectionFailed = "The Internet connection appears to be offline :'("
     }
 }
