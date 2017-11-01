@@ -95,17 +95,12 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
 extension CollectionViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        textField.addSubview(activityIndicator)
-        activityIndicator.frame = textField.bounds
-        activityIndicator.startAnimating()
         var newText:String
         if(string != ""){
             newText = textField.text! + string
         }else{
             newText = textField.text!.substring(to: textField.text!.index(before: textField.text!.endIndex))
         }
-        activityIndicator.removeFromSuperview()
         refreshPromos(newText)
         return true
     }

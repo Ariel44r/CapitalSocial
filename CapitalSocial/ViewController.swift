@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     //MARK: outlets
     @IBOutlet weak var textFieldPhone: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     //MARK: actionButtons
     @IBAction func buttonLogInPhone(_ sender: Any) {
@@ -49,6 +51,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         faceBookLogInButton()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        removeObservers()
+    }
+    
+    @objc func didTapView(gesture: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,6 +130,61 @@ extension ViewController {
             return true
         }
         return false
+    }
+}
+
+//MARK: manageKeyboard
+extension ViewController: UITextFieldDelegate {
+    //MARK: manageKeyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Try to find next responder
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            // Not found, so remove keyboard.
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillShow(notification)
+        }
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillHide(notification)
+        }
+    }
+    
+    func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
+        }
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: (frame.height + 50),right: 0)
+        scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(_ notification: Notification){
+        scrollView.contentInset = UIEdgeInsets.zero
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == textFieldPhone {
+            let cgpoint: CGPoint = CGPoint(x: 0,y: 200)
+            scrollView.setContentOffset(cgpoint, animated: true)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let cgpoint: CGPoint = CGPoint(x: 0,y: 0)
+        scrollView.setContentOffset(cgpoint, animated: true)
     }
 }
 
