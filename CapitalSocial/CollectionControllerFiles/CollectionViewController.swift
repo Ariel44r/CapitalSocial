@@ -21,6 +21,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StaticMethod.PKHUD.successHUD()
         // Do any additional setup after loading the view.
         refreshPromos("")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))

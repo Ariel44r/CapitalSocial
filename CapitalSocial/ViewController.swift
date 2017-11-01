@@ -35,7 +35,7 @@ class ViewController: UIViewController {
                 StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.cancelledLogin)
                 break
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                StaticMethod.PKHUD.successHUD()
+                StaticMethod.PKHUD.viewProgressHUD()
                 self.getFBUserData()
                 if self.accessTokenValidation() {
                     self.performSegue(withIdentifier: "promosSegue", sender: nil)
@@ -61,7 +61,6 @@ class ViewController: UIViewController {
         ServerManager.postRequest(textFieldPhone.text!) {
             response, error in
             if let response = response {
-                StaticMethod.PKHUD.successHUD()
                 self.performSegue(withIdentifier: "promosSegue", sender: nil)
                 debugPrint(response.Descripcion)
             }
