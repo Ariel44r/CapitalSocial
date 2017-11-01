@@ -150,11 +150,6 @@ extension CollectionViewController: UITextFieldDelegate {
         scrollView.contentInset = UIEdgeInsets.zero
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 }
 
 
