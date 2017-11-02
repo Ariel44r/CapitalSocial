@@ -26,25 +26,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
-        let loginManager = LoginManager()
-        loginManager.logIn(readPermissions: [.publicProfile], viewController: self, completion: {
-            loginResult in
-            switch loginResult {
-            case .failed(let error):
-                debugPrint(error)
-                break
-            case .cancelled:
-                StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.cancelledLogin)
-                break
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
-                StaticMethod.PKHUD.viewProgressHUD()
-                self.getFBUserData()
-                if self.accessTokenValidation() {
-                    self.performSegue(withIdentifier: "promosSegue", sender: nil)
-                }
-                break
-            }
-        })
+        loginFacebookInit()
     }
     
     override func viewDidLoad() {
@@ -75,6 +57,28 @@ class ViewController: UIViewController {
     }
     
     //MARK: Methods
+    func loginFacebookInit() {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [.publicProfile], viewController: self, completion: {
+            loginResult in
+            switch loginResult {
+            case .failed(let error):
+                debugPrint(error)
+                break
+            case .cancelled:
+                StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.cancelledLogin)
+                break
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                StaticMethod.PKHUD.viewProgressHUD()
+                self.getFBUserData()
+                if self.accessTokenValidation() {
+                    self.performSegue(withIdentifier: "promosSegue", sender: nil)
+                }
+                break
+            }
+        })
+    }
+    
     func logInPhoneRequest() {
         ServerManager.postRequest(textFieldPhone.text!) {
             response, error in
@@ -143,6 +147,7 @@ extension ViewController: UITextFieldDelegate {
         } else {
             // Not found, so remove keyboard.
             textField.resignFirstResponder()
+            self.logInPhoneRequest()
         }
         return true
     }
@@ -175,17 +180,6 @@ extension ViewController: UITextFieldDelegate {
         scrollView.contentInset = UIEdgeInsets.zero
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == textFieldPhone {
-            let cgpoint: CGPoint = CGPoint(x: 0,y: 200)
-            scrollView.setContentOffset(cgpoint, animated: true)
-        }
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let cgpoint: CGPoint = CGPoint(x: 0,y: 0)
-        scrollView.setContentOffset(cgpoint, animated: true)
-    }
 }
 
 
