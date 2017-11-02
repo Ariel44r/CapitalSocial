@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F2B021FA405B60032D6A0 /* Utils.swift */; };
+		4F54DB7B1FAAAEF800412F60 /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54DB7A1FAAAEF800412F60 /* Promo.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
@@ -53,6 +54,7 @@
 		4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoTizoncito.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoTizoncito.png; sourceTree = "<group>"; };
 		4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoIdea.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoIdea.png; sourceTree = "<group>"; };
 		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4F54DB7A1FAAAEF800412F60 /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			children = (
 				4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */,
 				4FD2501E1FA808F10019254C /* PromosProcess.swift */,
+				4F54DB7A1FAAAEF800412F60 /* Promo.swift */,
 				4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */,
 			);
 			path = CollectionControllerFiles;
@@ -426,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F54DB7B1FAAAEF800412F60 /* Promo.swift in Sources */,
 				4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */,
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,

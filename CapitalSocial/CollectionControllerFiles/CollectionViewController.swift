@@ -69,6 +69,10 @@ extension CollectionViewController {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "segueDetail", sender: nil)
+    }
+    
 }
 
 //MARK: UICollectionViewDelegateFlowLayout
@@ -87,10 +91,6 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("SELECT ITEM: \(indexPath.item)")
     }
     
 }
