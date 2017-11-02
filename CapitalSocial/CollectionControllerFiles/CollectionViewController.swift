@@ -14,6 +14,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     let reusableIdentifier = "Cell"
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    var tapGesture: UITapGestureRecognizer?
     
     //MARK: outlets
     @IBOutlet weak var promoCollection: UICollectionView!
@@ -24,8 +25,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         StaticMethod.PKHUD.successHUD()
         // Do any additional setup after loading the view.
         refreshPromos("")
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
-        view.addGestureRecognizer(tapGesture)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +89,10 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
         return sectionInsets.left
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        debugPrint("SELECT ITEM: \(indexPath.item)")
+    }
+    
 }
 
 //MARK: UITextFieldDelegate
@@ -133,6 +137,8 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: Notification) {
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+        view.addGestureRecognizer(tapGesture!)
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
@@ -143,6 +149,7 @@ extension CollectionViewController: UITextFieldDelegate {
     
     func keyboardWillHide(notification: Notification){
         scrollView.contentInset = UIEdgeInsets.zero
+        view.removeGestureRecognizer(tapGesture!)
     }
     
 }
