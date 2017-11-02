@@ -21,6 +21,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        StaticMethod.PKHUD.successHUD()
         // Do any additional setup after loading the view.
         refreshPromos("")
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
@@ -94,17 +95,12 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
 extension CollectionViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        textField.addSubview(activityIndicator)
-        activityIndicator.frame = textField.bounds
-        activityIndicator.startAnimating()
         var newText:String
         if(string != ""){
             newText = textField.text! + string
         }else{
             newText = textField.text!.substring(to: textField.text!.index(before: textField.text!.endIndex))
         }
-        activityIndicator.removeFromSuperview()
         refreshPromos(newText)
         return true
     }
@@ -147,11 +143,6 @@ extension CollectionViewController: UITextFieldDelegate {
     
     func keyboardWillHide(notification: Notification){
         scrollView.contentInset = UIEdgeInsets.zero
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }

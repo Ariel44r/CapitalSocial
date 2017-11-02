@@ -44,6 +44,6 @@ class ServerManager {
         }
     }
     static func availableConnection(_ str: String) -> Bool {
-        return (StaticMethod.StringProcess.stringContainString(str, "The Internet connection appears to be offline"))
+        return (StaticMethod.StringProcess.stringContainString(str, Constants.messagesToUser.connectionFailed))
     }
 }

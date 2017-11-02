@@ -81,5 +81,6 @@ class Constants {
     struct messagesToUser {
         static let connectionFailed = "The Internet connection appears to be offline :'("
         static let validationFailed = "Validation failure, please try again later :'("
+        static let cancelledLogin = "You cancelled Log in"
     }
 }
