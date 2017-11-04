@@ -16,6 +16,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var tapGesture: UITapGestureRecognizer?
     var promoName: String?
+    var nameUserFB: String?
     
     //MARK: outlets
     @IBOutlet weak var promoCollection: UICollectionView!
@@ -23,7 +24,12 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        StaticMethod.PKHUD.successHUD()
+        if let nameUserFB = nameUserFB {
+            debugPrint("NAMEOFUSERFB:" + nameUserFB)
+            StaticMethod.PKHUD.succesAndTextHUD(nameUserFB)
+        } else {
+            StaticMethod.PKHUD.successHUD()
+        }
         // Do any additional setup after loading the view.
         refreshPromos("")
         

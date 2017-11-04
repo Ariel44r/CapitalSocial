@@ -59,6 +59,13 @@ class StaticMethod {
         static func successHUD() {
             HUD.flash(.success, delay: 1.5)
         }
+        static func succesAndTextHUD(_ text: String) {
+            self.successHUD()
+            HUD.hide(afterDelay: 0.5, completion: {
+                error in
+                HUD.flash(.label((Constants.messagesToUser.welcome + text)), delay: 2.0)
+            })
+        }
     }
     struct StringProcess {
         static func replaceStringWithString(_ string: String, _ ocurrensOf: String, _ replaceWith: String) -> String {
@@ -81,6 +88,7 @@ class Constants {
     struct messagesToUser {
         static let connectionFailed = "The Internet connection appears to be offline :'("
         static let validationFailed = "Validation failure, please try again later :'("
-        static let cancelledLogin = "You cancelled Log in"
+        static let cancelledLogin = "You cancelled Log in with Facebook acount"
+        static let welcome = "Welcome to Capital Social "
     }
 }
