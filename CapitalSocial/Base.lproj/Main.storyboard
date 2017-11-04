@@ -147,7 +147,7 @@
                                                 <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dOw-xl-aWW">
@@ -270,22 +270,34 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjD-qC-EHj">
+                                        <rect key="frame" x="321" y="26" width="46" height="30"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButton:" destination="udc-8D-KPS" eventType="touchUpInside" id="Nhp-0C-JhR"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="vll-NU-Gzc" firstAttribute="top" secondItem="O4j-pH-PoX" secondAttribute="top" constant="26" id="BNC-Or-YKh"/>
                                     <constraint firstItem="pjE-2B-Zsw" firstAttribute="top" secondItem="O4j-pH-PoX" secondAttribute="top" constant="26" id="HFG-cj-dMg"/>
+                                    <constraint firstAttribute="trailing" secondItem="TjD-qC-EHj" secondAttribute="trailing" constant="8" id="Q7c-mo-miW"/>
                                     <constraint firstAttribute="bottom" secondItem="pjE-2B-Zsw" secondAttribute="bottom" constant="8" id="cpx-lv-zR0"/>
+                                    <constraint firstAttribute="bottom" secondItem="TjD-qC-EHj" secondAttribute="bottom" constant="8" id="dUp-Yv-yJa"/>
                                     <constraint firstItem="pjE-2B-Zsw" firstAttribute="leading" secondItem="O4j-pH-PoX" secondAttribute="leading" constant="8" id="m63-AY-hVa"/>
                                     <constraint firstAttribute="bottom" secondItem="vll-NU-Gzc" secondAttribute="bottom" constant="8" id="mEQ-HC-n06"/>
                                     <constraint firstItem="vll-NU-Gzc" firstAttribute="centerX" secondItem="O4j-pH-PoX" secondAttribute="centerX" id="rTf-0Z-IzL"/>
+                                    <constraint firstItem="TjD-qC-EHj" firstAttribute="top" secondItem="O4j-pH-PoX" secondAttribute="top" constant="26" id="uKU-YH-X4W"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jmm-5p-8aj">
-                                <rect key="frame" x="0.0" y="62" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="62" width="375" height="605"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="stT-Fr-vK9">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="605"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PromoBenavides.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-HT-GJV">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
@@ -408,7 +420,7 @@
         <image name="telefono" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dtd-pl-PET"/>
+        <segue reference="1oH-tb-qVX"/>
         <segue reference="hf2-CE-3fJ"/>
     </inferredMetricsTieBreakers>
 </document>

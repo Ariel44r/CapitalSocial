@@ -29,6 +29,11 @@ class DetailViewController: UIViewController {
        self.dismiss(animated: true, completion: nil)
         delegate?.returnToCollection()
     }
+    @IBAction func shareButton(_ sender: Any) {
+        let activityVC = UIActivityViewController(activityItems: [mainImage.image!], applicationActivities: nil)
+    activityVC.popoverPresentationController?.sourceView = self.view
+        self.present(activityVC, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +51,7 @@ class DetailViewController: UIViewController {
     func fillInFields(_ promoName: String) {
         mainImage.image = UIImage(named: promoName + ".png")
         tumbnailImage.image = UIImage(named: promoName + "@1.5x" + ".png")
-        payOffLabel.text = promoName
+        payOffLabel.text = StaticMethod.StringProcess.replaceStringWithString(promoName, "Promo", "")
     }
     
     /*
