@@ -8,13 +8,14 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, DetailViewControllerDelegate {
 
     var promos = [String]()
     let reusableIdentifier = "Cell"
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var tapGesture: UITapGestureRecognizer?
+    var promoName: String?
     
     //MARK: outlets
     @IBOutlet weak var promoCollection: UICollectionView!
@@ -64,12 +65,14 @@ extension CollectionViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath) as! PromosCell
         //cell.backgroundColor = UIColor.cyan
-        cell.promoImage.image = UIImage(named: promos[indexPath.item] + ".png")
+        cell.promoImage.image = UIImage(named: promos[indexPath.item] + "@1.5x" + ".png")
         cell.promoLabel.text = StaticMethod.StringProcess.replaceStringWithString(promos[indexPath.item], "Promo", "")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        debugPrint("SELECT ITEM: \(indexPath.item)")
+        promoName = promos[indexPath.item]
         self.performSegue(withIdentifier: "segueDetail", sender: nil)
     }
     
@@ -137,8 +140,8 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: Notification) {
-        tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
-        view.addGestureRecognizer(tapGesture!)
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+        view.addGestureRecognizer(self.tapGesture!)
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
@@ -148,11 +151,29 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillHide(notification: Notification){
+        //view.removeGestureRecognizer(self.tapGesture!)
+        if let tapGesture = tapGesture {
+            view.removeGestureRecognizer(tapGesture)
+            self.tapGesture = nil
+        }
         scrollView.contentInset = UIEdgeInsets.zero
-        view.removeGestureRecognizer(tapGesture!)
     }
     
 }
 
+//MARK: Segue
+extension CollectionViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailVC = segue.destination as! DetailViewController
+        detailVC.delegate = self
+        detailVC.promoName = self.promoName!
+    }
+}
+
+//MARK: delegateFunctions
+extension CollectionViewController {
+    func returnToCollection() {
+    }
+}
 
 

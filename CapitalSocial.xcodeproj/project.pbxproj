@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F2B021FA405B60032D6A0 /* Utils.swift */; };
 		4F54DB7B1FAAAEF800412F60 /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54DB7A1FAAAEF800412F60 /* Promo.swift */; };
+		4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
@@ -43,18 +44,10 @@
 
 /* Begin PBXFileReference section */
 		221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F1F2AE91FA3FDAC0032D6A0 /* PromoPapaJohns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoPapaJohns.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoPapaJohns.png; sourceTree = "<group>"; };
-		4F1F2AEA1FA3FDAC0032D6A0 /* PromoCinepolis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoCinepolis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoCinepolis.png; sourceTree = "<group>"; };
-		4F1F2AEB1FA3FDAC0032D6A0 /* PromoWingstop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoWingstop.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoWingstop.png; sourceTree = "<group>"; };
-		4F1F2AEC1FA3FDAC0032D6A0 /* PromoZonaFitness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoZonaFitness.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoZonaFitness.png; sourceTree = "<group>"; };
-		4F1F2AED1FA3FDAC0032D6A0 /* PromoChilis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoChilis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoChilis.png; sourceTree = "<group>"; };
-		4F1F2AF11FA3FDAC0032D6A0 /* PromoBurguerKing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBurguerKing.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBurguerKing.png; sourceTree = "<group>"; };
-		4F1F2AF21FA3FDAC0032D6A0 /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
-		4F1F2AF31FA3FDAC0032D6A0 /* PromoItaliannis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoItaliannis.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoItaliannis.png; sourceTree = "<group>"; };
-		4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoTizoncito.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoTizoncito.png; sourceTree = "<group>"; };
-		4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoIdea.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoIdea.png; sourceTree = "<group>"; };
 		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F54DB7A1FAAAEF800412F60 /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
+		4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -114,16 +107,7 @@
 		4F1F2AE81FA3FD7E0032D6A0 /* Promos */ = {
 			isa = PBXGroup;
 			children = (
-				4F1F2AF21FA3FDAC0032D6A0 /* PromoBenavides.png */,
-				4F1F2AF11FA3FDAC0032D6A0 /* PromoBurguerKing.png */,
-				4F1F2AED1FA3FDAC0032D6A0 /* PromoChilis.png */,
-				4F1F2AEA1FA3FDAC0032D6A0 /* PromoCinepolis.png */,
-				4F1F2AFA1FA3FDAD0032D6A0 /* PromoIdea.png */,
-				4F1F2AF31FA3FDAC0032D6A0 /* PromoItaliannis.png */,
-				4F1F2AE91FA3FDAC0032D6A0 /* PromoPapaJohns.png */,
-				4F1F2AF41FA3FDAD0032D6A0 /* PromoTizoncito.png */,
-				4F1F2AEB1FA3FDAC0032D6A0 /* PromoWingstop.png */,
-				4F1F2AEC1FA3FDAC0032D6A0 /* PromoZonaFitness.png */,
+				4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */,
 			);
 			path = Promos;
 			sourceTree = "<group>";
@@ -134,6 +118,14 @@
 				4F1F2B021FA405B60032D6A0 /* Utils.swift */,
 			);
 			path = UtilsFiles;
+			sourceTree = "<group>";
+		};
+		4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */,
+			);
+			path = DetailViewFiles;
 			sourceTree = "<group>";
 		};
 		4F63B36B1FA5C5F10053F974 /* ServerManager */ = {
@@ -184,6 +176,7 @@
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
+				4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */,
 				4FCFC5BB1FA7DA7D00A1C091 /* CollectionControllerFiles */,
 				4F63B36B1FA5C5F10053F974 /* ServerManager */,
 				4F1F2B041FA405BD0032D6A0 /* UtilsFiles */,
@@ -436,6 +429,7 @@
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
 				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,
+				4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */,
 				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
 				4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */,
 			);
