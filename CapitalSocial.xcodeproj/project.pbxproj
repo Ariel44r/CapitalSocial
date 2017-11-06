@@ -12,6 +12,7 @@
 		4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */; };
 		4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
+		4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F87EAF31FB121FF0076B58D /* Annotation.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
 		4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */; };
@@ -52,6 +53,7 @@
 		4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
+		4F87EAF31FB121FF0076B58D /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4FCFC5BC1FA7DAB400A1C091 /* PromosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromosCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */,
+				4F87EAF31FB121FF0076B58D /* Annotation.swift */,
 			);
 			path = MapKitFiles;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,
 				4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */,
 				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
+				4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */,
 				4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
