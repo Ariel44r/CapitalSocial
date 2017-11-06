@@ -173,14 +173,5 @@ extension ViewController: UITextFieldDelegate {
     
 }
 
-extension ViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let segueVC = segue.destination as! CollectionViewController
-        if nameUserFB != nil {
-            segueVC.nameUserFB = self.nameUserFB!
-        }
-    }
-}
-
 
 
