@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F2B021FA405B60032D6A0 /* Utils.swift */; };
 		4F54DB7B1FAAAEF800412F60 /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54DB7A1FAAAEF800412F60 /* Promo.swift */; };
+		4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */; };
 		4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
@@ -46,6 +47,8 @@
 		221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4F54DB7A1FAAAEF800412F60 /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
+		4F54FFF81FAE69970036F906 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		2A23467CDB756149731A8B46 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F54FFF81FAE69970036F906 /* CoreLocation.framework */,
 				221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */,
 			);
 			name = Frameworks;
@@ -118,6 +122,14 @@
 				4F1F2B021FA405B60032D6A0 /* Utils.swift */,
 			);
 			path = UtilsFiles;
+			sourceTree = "<group>";
+		};
+		4F54FFFC1FAE6C790036F906 /* MapKitFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */,
+			);
+			path = MapKitFiles;
 			sourceTree = "<group>";
 		};
 		4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */ = {
@@ -176,6 +188,7 @@
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
+				4F54FFFC1FAE6C790036F906 /* MapKitFiles */,
 				4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */,
 				4FCFC5BB1FA7DA7D00A1C091 /* CollectionControllerFiles */,
 				4F63B36B1FA5C5F10053F974 /* ServerManager */,
@@ -426,6 +439,7 @@
 				4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */,
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
+				4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */,
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
 				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,
