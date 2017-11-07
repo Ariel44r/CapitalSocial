@@ -31,7 +31,7 @@ class MapKitViewController: UIViewController {
         let annotation2 = Annotation("title2","location2", coordinate2)
         annotations.append(annotation1)
         annotations.append(annotation2)
-        MapView.addAnnotations(annotations)
+        MapView.addAnnotations(DataBaseManager.getAnnotations())
     }
     
     override func didReceiveMemoryWarning() {

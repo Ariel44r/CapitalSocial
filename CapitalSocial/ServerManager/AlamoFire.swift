@@ -43,6 +43,21 @@ class ServerManager {
             }
         }
     }
+    
+    static func getDataBase() -> Data? {
+        var data: Data?
+        do {
+            data = try Data(contentsOf: URL(string: Constants.dataBase.URLDB)!)
+            if let data = data {
+                debugPrint(data)
+                return data
+            }
+        } catch {
+            debugPrint(error)
+        }
+        return nil
+    }
+    
     static func availableConnection(_ str: String) -> Bool {
         return (StaticMethod.StringProcess.stringContainString(str, Constants.messagesToUser.connectionFailed))
     }

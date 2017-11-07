@@ -85,6 +85,9 @@ class Constants {
         static let URL = "http://209.222.19.75/wsAutorizador/api/autorizador/"
         static let endUrl = "AUTORIZADOR_ValidaUsuario"
     }
+    struct dataBase {
+        static let URLDB = "https://s3-us-west-2.amazonaws.com/ec2-52-88-126-190.us-west-2.compute.amazonaws.com/Map32/Quadrants_database/quadrant_7167.db"
+    }
     struct messagesToUser {
         static let connectionFailed = "The Internet connection appears to be offline :'("
         static let validationFailed = "Validation failure, please try again later :'("

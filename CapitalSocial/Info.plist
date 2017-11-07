@@ -50,6 +50,8 @@
 	</array>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Please let me storage this photo on your gallery</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please let me access to your Photos</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
