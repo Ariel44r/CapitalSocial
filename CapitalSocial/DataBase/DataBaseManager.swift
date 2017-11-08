@@ -51,23 +51,22 @@ class DataBaseManager {
             if let cString = sqlite3_column_text(statement, 2) {
                 title = String(cString: cString)
             } else {
-                print("name not found")
+                print("title not found")
             }
             if let cString = sqlite3_column_text(statement, 3) {
                 latitude = Double(String(cString: cString))!
                 debugPrint(latitude)
             } else {
-                print("name not found")
+                print("latitude not found")
             }
             if let cString = sqlite3_column_text(statement, 4) {
                 longitude = Double(String(cString: cString))!
                 debugPrint(longitude)
             } else {
-                print("name not found")
+                print("longitude not found")
             }
             
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            
             let currentAnnotation = Annotation(title, title, coordinate)
             annotations.append(currentAnnotation)
         }

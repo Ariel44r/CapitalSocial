@@ -175,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V8h-ts-aNl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211" y="950"/>
+            <point key="canvasLocation" x="1852" y="884"/>
         </scene>
         <!--Item-->
         <scene sceneID="jSB-n9-Tk5">
@@ -325,9 +325,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjD-qC-EHj">
-                                        <rect key="frame" x="321" y="26" width="46" height="30"/>
-                                        <state key="normal" title="Share">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjD-qC-EHj">
+                                        <rect key="frame" x="343" y="28" width="24" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="VKF-CX-6aS"/>
+                                        </constraints>
+                                        <state key="normal" image="IconoCompartir@1.5x">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -345,7 +348,7 @@
                                     <constraint firstItem="pjE-2B-Zsw" firstAttribute="leading" secondItem="O4j-pH-PoX" secondAttribute="leading" constant="8" id="m63-AY-hVa"/>
                                     <constraint firstAttribute="bottom" secondItem="vll-NU-Gzc" secondAttribute="bottom" constant="8" id="mEQ-HC-n06"/>
                                     <constraint firstItem="vll-NU-Gzc" firstAttribute="centerX" secondItem="O4j-pH-PoX" secondAttribute="centerX" id="rTf-0Z-IzL"/>
-                                    <constraint firstItem="TjD-qC-EHj" firstAttribute="top" secondItem="O4j-pH-PoX" secondAttribute="top" constant="26" id="uKU-YH-X4W"/>
+                                    <constraint firstItem="TjD-qC-EHj" firstAttribute="top" secondItem="O4j-pH-PoX" secondAttribute="top" constant="28" id="uKU-YH-X4W"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jmm-5p-8aj">
@@ -441,11 +444,12 @@
                         <outlet property="mainImage" destination="gtE-HT-GJV" id="Mfq-3A-7Hv"/>
                         <outlet property="payOffLabel" destination="AUt-4y-KSK" id="bbQ-GU-gE3"/>
                         <outlet property="tumbnailImage" destination="NFq-bZ-iYh" id="93L-Sw-u72"/>
+                        <segue destination="CyP-wK-wbJ" kind="show" identifier="segueShare" id="dme-lc-iMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOf-N1-vjm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="112"/>
+            <point key="canvasLocation" x="2674" y="112"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kkY-b6-Vvy">
@@ -466,8 +470,48 @@
             </objects>
             <point key="canvasLocation" x="1110" y="112"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="jyd-e6-vk8">
+            <objects>
+                <viewController id="CyP-wK-wbJ" customClass="ShareViewController" customModule="CapitalSocial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nQX-Hc-Nm7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1j-pp-zlg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-M8-sXB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z1j-pp-zlg" firstAttribute="width" secondItem="nQX-Hc-Nm7" secondAttribute="width" id="D1S-mb-e29"/>
+                            <constraint firstItem="z1j-pp-zlg" firstAttribute="centerX" secondItem="nQX-Hc-Nm7" secondAttribute="centerX" id="I1p-3d-oR2"/>
+                            <constraint firstItem="5D5-M8-sXB" firstAttribute="leading" secondItem="dCd-tW-UEA" secondAttribute="leading" id="J2d-Mr-dH3"/>
+                            <constraint firstItem="5D5-M8-sXB" firstAttribute="top" secondItem="dCd-tW-UEA" secondAttribute="top" constant="44" id="Mnx-ai-ksP"/>
+                            <constraint firstItem="5D5-M8-sXB" firstAttribute="trailing" secondItem="dCd-tW-UEA" secondAttribute="trailing" id="Vpk-U0-knA"/>
+                            <constraint firstItem="dCd-tW-UEA" firstAttribute="trailing" secondItem="z1j-pp-zlg" secondAttribute="trailing" id="maQ-gW-26O"/>
+                            <constraint firstItem="dCd-tW-UEA" firstAttribute="trailing" secondItem="z1j-pp-zlg" secondAttribute="trailing" id="nPr-xG-ywJ"/>
+                            <constraint firstItem="5D5-M8-sXB" firstAttribute="top" secondItem="z1j-pp-zlg" secondAttribute="bottom" id="qsA-DG-cAW"/>
+                            <constraint firstItem="dCd-tW-UEA" firstAttribute="top" secondItem="z1j-pp-zlg" secondAttribute="top" constant="20" id="tmw-gu-7Dw"/>
+                            <constraint firstItem="5D5-M8-sXB" firstAttribute="width" secondItem="nQX-Hc-Nm7" secondAttribute="width" id="u5c-Zs-vk5"/>
+                            <constraint firstItem="dCd-tW-UEA" firstAttribute="bottom" secondItem="5D5-M8-sXB" secondAttribute="bottom" id="zKN-nh-mqB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dCd-tW-UEA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="qJr-Vi-2mX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3W-81-JKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3591" y="112"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="IconoCompartir@1.5x" width="56" height="60"/>
         <image name="IconoFacebook" width="20" height="36"/>
         <image name="LogoSplashScreen" width="596" height="234"/>
         <image name="PromoBenavides.png" width="356" height="234"/>

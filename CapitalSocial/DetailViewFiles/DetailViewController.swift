@@ -30,8 +30,13 @@ class DetailViewController: UIViewController {
         delegate?.returnToCollection()
     }
     @IBAction func shareButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "segueShare", sender: nil)
+        //nativeShare()
+    }
+    
+    func nativeShare() {
         let activityVC = UIActivityViewController(activityItems: [mainImage.image!], applicationActivities: nil)
-    activityVC.popoverPresentationController?.sourceView = self.view
+        activityVC.popoverPresentationController?.sourceView = self.view
         self.present(activityVC, animated: true, completion: nil)
     }
     

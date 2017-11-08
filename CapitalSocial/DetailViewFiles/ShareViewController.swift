@@ -1,32 +1,21 @@
 //
-//  MapKitViewController.swift
+//  ShareViewController.swift
 //  CapitalSocial
 //
-//  Created by Ariel Ramírez on 04/11/17.
+//  Created by Ariel Ramírez on 07/11/17.
 //  Copyright © 2017 Ariel Ramírez. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class MapKitViewController: UIViewController {
+class ShareViewController: UIViewController {
 
-    //MARK: Variables
-    
-    
-    //Outlets
-    @IBOutlet weak var MapView: MKMapView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapPlace()
+
         // Do any additional setup after loading the view.
     }
-    
-    func mapPlace() {
-        MapView.addAnnotations(DataBaseManager.getAnnotations())
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,4 +33,3 @@ class MapKitViewController: UIViewController {
     */
 
 }
-
