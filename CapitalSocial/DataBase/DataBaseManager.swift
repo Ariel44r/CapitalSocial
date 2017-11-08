@@ -11,15 +11,16 @@ import SQLite3
 import MapKit
 
 class DataBaseManager {
-    /*static func getPath() -> String {
-        return "/Users/aramirez/Desktop/iOS/CapitalSocial/CapitalSocial/POI/quadrant_7167.db"
-    }*/
     static func getPath() -> String {
+        ServerManager.saveDataBase()
+        return "/Users/aramirez/Desktop/iOS/CapitalSocial/CapitalSocial/POI/quadrant_7167.db"
+    }
+    /*static func getPath() -> String {
         let dbURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let dbPath = dbURL.appendingPathComponent("quadrant_7167.db")
         debugPrint("DATABASE PATH: \(dbPath.path)")
         return dbPath.path
-    }
+    }*/
     
     static func connectToDB() -> OpaquePointer {
         let dbPath = getPath()

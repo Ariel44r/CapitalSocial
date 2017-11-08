@@ -49,13 +49,30 @@ class ServerManager {
         do {
             data = try Data(contentsOf: URL(string: Constants.dataBase.URLDB)!)
             if let data = data {
-                debugPrint(data)
                 return data
             }
         } catch {
             debugPrint(error)
         }
         return nil
+    }
+    
+    static func saveDataBase() {
+        do {
+            let dataOfDataBase = self.getDataBase()!
+            let fileManager = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = fileManager.appendingPathComponent("quadrant_7167.db")
+            debugPrint("DATABASEPATH: " + fileURL.path)
+            let writeData = String(data: dataOfDataBase, encoding: .ascii)
+            do {
+                //writeFile
+                try writeData?.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            } catch {
+                debugPrint(error)
+            }
+        } catch {
+            debugPrint(error)
+        }
     }
     
     static func availableConnection(_ str: String) -> Bool {
