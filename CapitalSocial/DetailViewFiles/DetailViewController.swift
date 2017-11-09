@@ -12,17 +12,19 @@ protocol DetailViewControllerDelegate: class {
     func returnToCollection()
 }
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     //MARK: Instances
     weak var delegate: DetailViewControllerDelegate?
     var promoName: String?
+    let transition = TransitionShare()
 
     //MARK: Outlets
     @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var tumbnailImage: UIImageView!
     @IBOutlet weak var payOffLabel: UILabel!
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var shareButton: UIButton!
     
     //MARK: Actions
     @IBAction func backButton(_ sender: Any) {
@@ -34,6 +36,26 @@ class DetailViewController: UIViewController {
         //nativeShare()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let shareVC = segue.destination as! ShareViewController
+        shareVC.transitioningDelegate = self
+        shareVC.modalPresentationStyle = .custom
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startinngPoint = shareButton.center
+        transition.circleColor = shareButton.backgroundColor!
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startinngPoint = shareButton.center
+        transition.circleColor = shareButton.backgroundColor!
+        return transition
+    }
+    
     func nativeShare() {
         let activityVC = UIActivityViewController(activityItems: [mainImage.image!], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = self.view
@@ -42,6 +64,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.backgroundColor = UIColor.black
         if let promoName = promoName {
             fillInFields(promoName)
         }

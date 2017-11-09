@@ -9,7 +9,7 @@
 import UIKit
 
 class TransitionShare: NSObject {
-
+    
     var circle = UIView()
     var startinngPoint = CGPoint.zero {
         didSet {
@@ -31,12 +31,55 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
     }
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if transitionMode == .present {
+            let containerView = transitionContext.containerView
             if let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) {
                 let viewCenter = presentedView.center
                 let viewSize = presentedView.frame.size
                 circle = UIView()
-            } else {
+                circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startinngPoint)
+                circle.layer.cornerRadius = circle.frame.size.height / 2
+                circle.center = startinngPoint
+                circle.backgroundColor = circleColor
+                circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                containerView.addSubview(circle)
                 
+                presentedView.center = startinngPoint
+                presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                presentedView.alpha = 0
+                presentedView.addSubview(presentedView)
+                
+                UIView.animate(withDuration: duration, animations: {
+                    self.circle.transform = CGAffineTransform.identity
+                    presentedView.transform = CGAffineTransform.identity
+                    presentedView.alpha = 1
+                    presentedView.center = viewCenter
+                }, completion: { (success: Bool) in
+                    transitionContext.completeTransition(success)
+                })
+            } else {
+                let transitionModeKey = (transitionMode == .pop) ? UITransitionContextViewKey.to : UITransitionContextViewKey.from
+                if let returningView = transitionContext.view(forKey: transitionModeKey) {
+                    let viewCenter = returningView.center
+                    let viewSize = returningView.frame.size
+                    circle.frame = frameForCircle(withViewCenter: viewCenter, size: viewSize, startPoint: startinngPoint)
+                    circle.layer.cornerRadius = circle.frame.size.height / 2
+                    circle.center = startinngPoint
+                    UIView.animate(withDuration: duration, animations: {
+                        self.circle.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                        returningView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                        returningView.center = self.startinngPoint
+                        returningView.alpha = 0
+                        if self.transitionMode == .pop {
+                            containerView.insertSubview(returningView, belowSubview: returningView)
+                            containerView.insertSubview(self.circle, belowSubview: returningView)
+                        }
+                    }, completion: { (success: Bool) in
+                        returningView.center = viewCenter
+                        returningView.removeFromSuperview()
+                        self.circle.removeFromSuperview()
+                        transitionContext.completeTransition(success)
+                    })
+                }
             }
         }
     }
@@ -49,3 +92,4 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
         return CGRect(origin: CGPoint.zero, size: size)
     }
 }
+

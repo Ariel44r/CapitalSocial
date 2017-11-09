@@ -19,9 +19,9 @@ class DataBaseManager {
         let dbPath = getPath()
         var db: OpaquePointer?
         if sqlite3_open(dbPath, &db) != SQLITE_OK {
-            print("error opening database")
+            debugPrint("error opening database")
         } else {
-            print("has successfully entered into POI database dude!")
+            debugPrint("has successfully entered into POI database dude!")
         }
         return db!
     }
@@ -34,7 +34,7 @@ class DataBaseManager {
         var statement: OpaquePointer?
         if sqlite3_prepare_v2(db, query, -1, &statement, nil) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error preparing select: \(errmsg)")
+            debugPrint("error preparing select: \(errmsg)")
         }
         while sqlite3_step(statement) == SQLITE_ROW {
             var title: String = ""
@@ -44,19 +44,17 @@ class DataBaseManager {
             if let cString = sqlite3_column_text(statement, 2) {
                 title = String(cString: cString)
             } else {
-                print("title not found")
+                debugPrint("title not found")
             }
             if let cString = sqlite3_column_text(statement, 3) {
                 latitude = Double(String(cString: cString))!
-                debugPrint(latitude)
             } else {
-                print("latitude not found")
+                debugPrint("latitude not found")
             }
             if let cString = sqlite3_column_text(statement, 4) {
                 longitude = Double(String(cString: cString))!
-                debugPrint(longitude)
             } else {
-                print("longitude not found")
+                debugPrint("longitude not found")
             }
             
             let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
@@ -65,7 +63,7 @@ class DataBaseManager {
         }
         if sqlite3_finalize(statement) != SQLITE_OK {
             let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error finalizing prepared statement: \(errmsg)")
+            debugPrint("error finalizing prepared statement: \(errmsg)")
         }
         statement = nil
         return annotations

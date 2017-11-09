@@ -57,8 +57,8 @@
 		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4F87EAF31FB121FF0076B58D /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
-		4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = DetailViewFiles/ShareViewController.swift; sourceTree = "<group>"; };
-		4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitionShare.swift; path = CapitalSocial/DetailViewFiles/TransitionShare.swift; sourceTree = "<group>"; };
+		4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionShare.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FC971581FB13A4800497606 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataBaseManager.swift; path = CapitalSocial/DataBase/DataBaseManager.swift; sourceTree = SOURCE_ROOT; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +144,8 @@
 		4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */ = {
 			isa = PBXGroup;
 			children = (
+				4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */,
+				4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */,
 				4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */,
 			);
 			path = DetailViewFiles;
@@ -173,7 +175,6 @@
 		4FEC9CB31FA2B47D000643EB = {
 			isa = PBXGroup;
 			children = (
-				4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */,
 				4FEC9CBE1FA2B47D000643EB /* CapitalSocial */,
 				4FEC9CD31FA2B47E000643EB /* CapitalSocialTests */,
 				4FEC9CDE1FA2B47E000643EB /* CapitalSocialUITests */,
@@ -199,7 +200,6 @@
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
-				4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */,
 				4F54FFFC1FAE6C790036F906 /* MapKitFiles */,
 				4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */,
 				4FCFC5BB1FA7DA7D00A1C091 /* CollectionControllerFiles */,
