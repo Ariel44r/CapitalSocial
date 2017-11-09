@@ -12,8 +12,7 @@ import MapKit
 
 class DataBaseManager {
     static func getPath() -> String {
-        ServerManager.saveDataBase()
-        return "/Users/aramirez/Desktop/iOS/CapitalSocial/CapitalSocial/POI/quadrant_7167.db"
+        return (ServerManager.dataBasePath!)
     }
     /*static func getPath() -> String {
         let dbURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)

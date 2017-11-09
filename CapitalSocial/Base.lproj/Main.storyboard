@@ -444,7 +444,7 @@
                         <outlet property="mainImage" destination="gtE-HT-GJV" id="Mfq-3A-7Hv"/>
                         <outlet property="payOffLabel" destination="AUt-4y-KSK" id="bbQ-GU-gE3"/>
                         <outlet property="tumbnailImage" destination="NFq-bZ-iYh" id="93L-Sw-u72"/>
-                        <segue destination="CyP-wK-wbJ" kind="show" identifier="segueShare" id="dme-lc-iMd"/>
+                        <segue destination="CyP-wK-wbJ" kind="modal" identifier="segueShare" modalTransitionStyle="flipHorizontal" id="dme-lc-iMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOf-N1-vjm" userLabel="First Responder" sceneMemberID="firstResponder"/>

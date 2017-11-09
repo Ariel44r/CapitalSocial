@@ -14,6 +14,7 @@
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F87EAF31FB121FF0076B58D /* Annotation.swift */; };
 		4FB4B8071FB2B7B1003E098B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */; };
+		4FB4B8091FB2BC1C003E098B /* TransitionShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FC971591FB13A4800497606 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC971581FB13A4800497606 /* DataBaseManager.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
@@ -57,6 +58,7 @@
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4F87EAF31FB121FF0076B58D /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShareViewController.swift; path = DetailViewFiles/ShareViewController.swift; sourceTree = "<group>"; };
+		4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TransitionShare.swift; path = CapitalSocial/DetailViewFiles/TransitionShare.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FC971581FB13A4800497606 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataBaseManager.swift; path = CapitalSocial/DataBase/DataBaseManager.swift; sourceTree = SOURCE_ROOT; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 		4FEC9CB31FA2B47D000643EB = {
 			isa = PBXGroup;
 			children = (
+				4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */,
 				4FEC9CBE1FA2B47D000643EB /* CapitalSocial */,
 				4FEC9CD31FA2B47E000643EB /* CapitalSocialTests */,
 				4FEC9CDE1FA2B47E000643EB /* CapitalSocialUITests */,
@@ -450,6 +453,7 @@
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
 				4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */,
+				4FB4B8091FB2BC1C003E098B /* TransitionShare.swift in Sources */,
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
 				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,

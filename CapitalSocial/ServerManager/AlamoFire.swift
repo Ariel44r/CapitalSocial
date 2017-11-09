@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 class ServerManager {
+    
+    static var dataBasePath: String?
     static func postRequest(_ phone: String,_ completion: @escaping (_ : Response?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
         let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
@@ -42,6 +44,23 @@ class ServerManager {
                     }
             }
         }
+    }
+    
+    static func databaseDownload(databaseURL: String) -> Void {
+        let downloadsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileUrl = downloadsUrl.appendingPathComponent("database.db")
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            //let downloadsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let fileURL = fileUrl
+            debugPrint(fileURL.path)
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        Alamofire.download(databaseURL, to: destination).response { response in
+            if response.error == nil, let filePath = response.destinationURL?.path {
+                debugPrint(filePath)
+            }
+        }
+        dataBasePath = fileUrl.path
     }
     
     static func getDataBase() -> Data? {
