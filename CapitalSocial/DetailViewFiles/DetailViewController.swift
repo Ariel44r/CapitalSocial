@@ -64,7 +64,7 @@ class DetailViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shareButton.backgroundColor = UIColor.black
+        shareButton.backgroundColor = UIColor.clear
         if let promoName = promoName {
             fillInFields(promoName)
         }

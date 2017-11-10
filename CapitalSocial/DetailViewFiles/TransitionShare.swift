@@ -18,7 +18,7 @@ class TransitionShare: NSObject {
     }
     
     var circleColor = UIColor.white
-    var duration = 0.4
+    var duration = 2.0
     enum CircularTransitionMode:Int {
         case present, dismiss, pop
     }
@@ -29,7 +29,28 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
+    
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+        let finalFrameForVC = transitionContext.finalFrame(for: toViewController)
+        let containerView = transitionContext.containerView
+        toViewController.view.frame = CGRect(x: 0, y: -5000, width: 100, height: 100)
+        containerView.addSubview(toViewController.view)
+        
+        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
+            fromViewController.view.alpha = 0.5
+            toViewController.view.frame = finalFrameForVC
+        }, completion: {
+            finished in
+            transitionContext.completeTransition(true)
+            fromViewController.view.alpha = 1.0
+        })
+    }
+    
+    /*func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if transitionMode == .present {
             let containerView = transitionContext.containerView
             if let presentedView = transitionContext.view(forKey: UITransitionContextViewKey.to) {
@@ -82,7 +103,7 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
                 }
             }
         }
-    }
+    }*/
     
     func frameForCircle(withViewCenter viewCenter: CGPoint, size viewSize: CGSize, startPoint: CGPoint) -> CGRect {
         let xLength = fmax(startPoint.y, viewSize.width - startPoint.x)
