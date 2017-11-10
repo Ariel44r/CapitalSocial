@@ -33,21 +33,38 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         
-        let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
-        let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
-        let finalFrameForVC = transitionContext.finalFrame(for: toViewController)
-        let containerView = transitionContext.containerView
-        toViewController.view.frame = CGRect(x: 0, y:-1000, width: 100, height: 100)
-        containerView.addSubview(toViewController.view)
-        
-        UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
-            fromViewController.view.alpha = 1.0
-            toViewController.view.frame = finalFrameForVC
-        }, completion: {
-            finished in
-            transitionContext.completeTransition(true)
-            fromViewController.view.alpha = 1.0
-        })
+        if transitionMode == .present {
+            let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+            let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+            let finalFrameForVC = transitionContext.finalFrame(for: toViewController)
+            let containerView = transitionContext.containerView
+            toViewController.view.frame = CGRect(x: -1000, y:0, width: 100, height: 100)
+            containerView.addSubview(toViewController.view)
+            
+            UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
+                fromViewController.view.alpha = 1.0
+                toViewController.view.frame = finalFrameForVC
+            }, completion: {
+                finished in
+                transitionContext.completeTransition(true)
+                fromViewController.view.alpha = 1.0
+            })
+        } else {
+            let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+            let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+            let containerView = fromViewController.view.superview
+            let originalCenter = fromViewController.view.center
+            
+            toViewController.view.transform = CGAffineTransform(scaleX: 0.05, y: 0.05)
+            toViewController.view.center = originalCenter
+            
+            containerView?.addSubview(toViewController.view)
+            UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [], animations: {
+                toViewController.view.transform = CGAffineTransform.identity
+            }, completion: { success in
+                fromViewController.present(toViewController, animated: false, completion: nil)
+            })
+        }
     }
     
     /*func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

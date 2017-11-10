@@ -50,7 +50,7 @@ class DetailViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .present
+        transition.transitionMode = .dismiss
         transition.startinngPoint = shareButton.center
         transition.circleColor = shareButton.backgroundColor!
         return transition

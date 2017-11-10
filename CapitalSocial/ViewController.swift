@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             case .cancelled:
                 StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.cancelledLogin)
                 break
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            case .success( _, _, _):
                 StaticMethod.PKHUD.viewProgressHUD()
                 self.getFBUserData() {
                     response, error in
