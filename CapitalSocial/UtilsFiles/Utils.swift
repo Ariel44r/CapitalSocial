@@ -59,6 +59,13 @@ class StaticMethod {
         static func successHUD() {
             HUD.flash(.success, delay: 1.5)
         }
+        static func succesAndTextHUD(_ text: String) {
+            self.successHUD()
+            HUD.hide(afterDelay: 0.5, completion: {
+                error in
+                HUD.flash(.label((Constants.messagesToUser.welcome + text)), delay: 2.0)
+            })
+        }
     }
     struct StringProcess {
         static func replaceStringWithString(_ string: String, _ ocurrensOf: String, _ replaceWith: String) -> String {
@@ -78,9 +85,13 @@ class Constants {
         static let URL = "http://209.222.19.75/wsAutorizador/api/autorizador/"
         static let endUrl = "AUTORIZADOR_ValidaUsuario"
     }
+    struct dataBase {
+        static let URLDB = "https://s3-us-west-2.amazonaws.com/ec2-52-88-126-190.us-west-2.compute.amazonaws.com/Map32/Quadrants_database/quadrant_7167.db"
+    }
     struct messagesToUser {
         static let connectionFailed = "The Internet connection appears to be offline :'("
         static let validationFailed = "Validation failure, please try again later :'("
-        static let cancelledLogin = "You cancelled Log in"
+        static let cancelledLogin = "You cancelled Log in with Facebook acount"
+        static let welcome = "Welcome to Capital Social "
     }
 }

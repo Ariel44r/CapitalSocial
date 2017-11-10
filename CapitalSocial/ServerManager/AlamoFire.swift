@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 
 class ServerManager {
+    
+    static var dataBasePath: String?
     static func postRequest(_ phone: String,_ completion: @escaping (_ : Response?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
         let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
@@ -43,6 +45,57 @@ class ServerManager {
             }
         }
     }
+    
+    static func databaseDownload(databaseURL: String) -> Void {
+        let downloadsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileUrl = downloadsUrl.appendingPathComponent("database.db")
+        dataBasePath = fileUrl.path
+        let fManager = FileManager()
+        if !fManager.fileExists(atPath: dataBasePath!) {
+            let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+                let fileURL = fileUrl
+                debugPrint(fileURL.path)
+                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            Alamofire.download(databaseURL, to: destination).response { response in
+                if response.error == nil, let filePath = response.destinationURL?.path {
+                    debugPrint(filePath)
+                }
+            }
+        }
+    }
+    
+    static func getDataBase() -> Data? {
+        var data: Data?
+        do {
+            data = try Data(contentsOf: URL(string: Constants.dataBase.URLDB)!)
+            if let data = data {
+                return data
+            }
+        } catch {
+            debugPrint(error)
+        }
+        return nil
+    }
+    
+    static func saveDataBase() {
+        do {
+            let dataOfDataBase = self.getDataBase()!
+            let fileManager = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let fileURL = fileManager.appendingPathComponent("quadrant_7167.db")
+            debugPrint("DATABASEPATH: " + fileURL.path)
+            let writeData = String(data: dataOfDataBase, encoding: .ascii)
+            do {
+                //writeFile
+                try writeData?.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+            } catch {
+                debugPrint(error)
+            }
+        } catch {
+            debugPrint(error)
+        }
+    }
+    
     static func availableConnection(_ str: String) -> Bool {
         return (StaticMethod.StringProcess.stringContainString(str, Constants.messagesToUser.connectionFailed))
     }

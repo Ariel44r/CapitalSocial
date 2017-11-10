@@ -12,6 +12,8 @@ class PromosProcess {
     
     static var promos = ["PromoBenavides", "PromoBurguerKing", "PromoChilis", "PromoCinepolis", "PromoIdea", "PromoItaliannis", "PromoPapaJohns", "PromoTizoncito", "PromoWingstop", "PromoZonaFitness"]
     
+    static var promoArray = [Promo]()
+    
     static func searchFilter(_ searchTerm: String, completion : @escaping (_ results: [String]?) -> Void) {
         var searchPromoForName = [String]()
         if searchTerm == "" || searchTerm == "\n" {

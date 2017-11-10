@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     //MARK: variablesAndInstances
     var dict : [String : AnyObject]!
+    var nameUserFB: String?
     
     //MARK: outlets
     @IBOutlet weak var textFieldPhone: UITextField!
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ServerManager.databaseDownload(databaseURL: Constants.dataBase.URLDB)
         // Do any additional setup after loading the view, typically from a nib.
         faceBookLogInButton()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
@@ -70,9 +72,14 @@ class ViewController: UIViewController {
                 break
             case .success(let grantedPermissions, let declinedPermissions, let accessToken):
                 StaticMethod.PKHUD.viewProgressHUD()
-                self.getFBUserData()
-                if self.accessTokenValidation() {
-                    self.performSegue(withIdentifier: "promosSegue", sender: nil)
+                self.getFBUserData() {
+                    response, error in
+                    if let response = response {
+                        self.nameUserFB = response
+                        if self.accessTokenValidation() {
+                            self.performSegue(withIdentifier: "promosSegue", sender: nil)
+                        }
+                    }
                 }
                 break
             }
@@ -103,27 +110,12 @@ extension ViewController {
         //view.addSubview(loginButton)
     }
     
-    /*func customLogInButton() {
-        // Add a custom login button to your app
-        let myLoginButton = UIButton(type: .custom)
-        myLoginButton.backgroundColor = UIColor.blue
-        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
-        myLoginButton.center = view.center
-        myLoginButton.setTitle("LoginButton", for: .normal)
-        // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
-        // Add the button to the view
-        getFBUserData()
-        view.addSubview(myLoginButton)
-    }*/
-    
-    
-    func getFBUserData(){
+    func getFBUserData(_ completion: @escaping(_ : String?, _ : Error?)->Void){
         if((FBSDKAccessToken.current()) != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (result != nil){
                     self.dict = result as! [String : AnyObject]
-                    debugPrint("DICTIONARY: \(self.dict!)")
+                    OperationQueue.main.addOperation({completion((self.dict["name"] as! String), nil)})
                 }
             })
         }
