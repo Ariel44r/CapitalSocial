@@ -481,7 +481,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1j-pp-zlg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital Social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="miW-4J-5ug">
+                                        <rect key="frame" x="94" y="26" width="187" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="miW-4J-5ug" secondAttribute="trailing" constant="94" id="BOr-ZZ-6Uz"/>
+                                    <constraint firstItem="miW-4J-5ug" firstAttribute="top" secondItem="z1j-pp-zlg" secondAttribute="top" constant="26" id="GoP-sn-xfG"/>
+                                    <constraint firstItem="miW-4J-5ug" firstAttribute="leading" secondItem="z1j-pp-zlg" secondAttribute="leading" constant="94" id="L0h-BO-oxv"/>
+                                    <constraint firstAttribute="bottom" secondItem="miW-4J-5ug" secondAttribute="bottom" constant="8" id="zCg-Su-jVD"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-M8-sXB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
