@@ -37,7 +37,7 @@ extension TransitionShare: UIViewControllerAnimatedTransitioning {
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
         let finalFrameForVC = transitionContext.finalFrame(for: toViewController)
         let containerView = transitionContext.containerView
-        toViewController.view.frame = CGRect(x: 0, y:-200, width: 100, height: 100)
+        toViewController.view.frame = CGRect(x: 0, y:-1000, width: 100, height: 100)
         containerView.addSubview(toViewController.view)
         
         UIView.animate(withDuration: duration, delay: 0.0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: .curveLinear, animations: {
