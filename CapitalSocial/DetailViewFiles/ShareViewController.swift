@@ -30,6 +30,7 @@ class ShareViewController: UIViewController {
         else {
             StaticMethod.PKHUD.errorAndTextHUD("You are not logged in to your Facebook account.")
         }
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func shareTwitter(_ sender: Any) {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
@@ -44,9 +45,23 @@ class ShareViewController: UIViewController {
         else {
             StaticMethod.PKHUD.errorAndTextHUD("You are not logged in to your Twitter account.")
         }
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func shareWhatsApp(_ sender: Any) {
+        let date = Date()
+        let msg = "Hi my dear friends\(date)"
+        let urlWhats = "whatsapp://send?text=\(msg)"
         
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) {
+            if let whatsappURL = NSURL(string: urlString) {
+                if UIApplication.shared.canOpenURL(whatsappURL as URL) {
+                    UIApplication.shared.openURL(whatsappURL as URL)
+                } else {
+                    StaticMethod.PKHUD.errorAndTextHUD("Please install watsapp")
+                }
+            }
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {
