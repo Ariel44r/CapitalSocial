@@ -535,6 +535,9 @@
                                             <constraint firstAttribute="height" constant="70" id="gBh-id-OuN"/>
                                         </constraints>
                                         <state key="normal" image="IconoCompartirFacebook@1.5x"/>
+                                        <connections>
+                                            <action selector="shareFacebook:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="u9j-dV-q7i"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-TV-l3O">
                                         <rect key="frame" x="267" y="260" width="70" height="70"/>
@@ -543,6 +546,9 @@
                                             <constraint firstAttribute="width" constant="70" id="Qei-k3-Iqf"/>
                                         </constraints>
                                         <state key="normal" image="IconoCompartirTwitter@1.5x"/>
+                                        <connections>
+                                            <action selector="shareTwitter:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="UZt-t2-qHW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-6M-DSO">
                                         <rect key="frame" x="267" y="362" width="70" height="70"/>
