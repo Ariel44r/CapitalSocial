@@ -39,20 +39,21 @@ class DetailViewController: UIViewController, UIViewControllerTransitioningDeleg
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let shareVC = segue.destination as! ShareViewController
         shareVC.transitioningDelegate = self
+        shareVC.namePhoto = promoName
         shareVC.modalPresentationStyle = .custom
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        transition.startinngPoint = shareButton.center
-        transition.circleColor = shareButton.backgroundColor!
+        transition.startingPoint = shareButton.center
+        transition.bubbleColor = shareButton.backgroundColor!
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        transition.startinngPoint = shareButton.center
-        transition.circleColor = shareButton.backgroundColor!
+        transition.startingPoint = shareButton.center
+        transition.bubbleColor = shareButton.backgroundColor!
         return transition
     }
     

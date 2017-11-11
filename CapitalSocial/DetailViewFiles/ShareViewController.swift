@@ -8,11 +8,13 @@
 
 import UIKit
 import Social
+import FacebookShare
+import FacebookCore
 
 class ShareViewController: UIViewController {
 
     //MARK: variablesAndInstances
-    let namePhoto: String? = "PromoIdea@1.5x"
+    var namePhoto: String? = nil
     
     //MARK: actions
     @IBAction func shareFacebook(_ sender: Any) {
