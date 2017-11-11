@@ -7,11 +7,50 @@
 //
 
 import UIKit
+import Social
+import FacebookShare
+import FacebookCore
 
 class ShareViewController: UIViewController {
 
+    //MARK: variablesAndInstances
+    var namePhoto: String? = nil
+    
+    //MARK: actions
+    @IBAction func shareFacebook(_ sender: Any) {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
+            debugPrint("Facebook is Available")
+            let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            post?.setInitialText("Post of the day")
+            if let namePhoto = self.namePhoto {
+                post?.add(UIImage(named: namePhoto))
+            }
+            self.present(post!, animated: true, completion: nil)
+        }
+        else {
+            StaticMethod.PKHUD.errorAndTextHUD("You are not logged in to your Facebook account.")
+        }
+    }
+    @IBAction func shareTwitter(_ sender: Any) {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+            debugPrint("Twitter is Available")
+            let post = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            post?.setInitialText("Post of the day")
+            if let namePhoto = self.namePhoto {
+                post?.add(UIImage(named: namePhoto))
+            }
+            self.present(post!, animated: true, completion: nil)
+        }
+        else {
+            StaticMethod.PKHUD.errorAndTextHUD("You are not logged in to your Twitter account.")
+        }
+    }
+    @IBAction func shareWhatsApp(_ sender: Any) {
+        
+    }
+    
     @IBAction func backButton(_ sender: Any) {
-        //self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

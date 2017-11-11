@@ -14,7 +14,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     let reusableIdentifier = "Cell"
     let itemsPerRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    var tapGesture: UITapGestureRecognizer?
+    var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
     var promoName: String?
 
     
@@ -141,8 +141,7 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: Notification) {
-        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
-        view.addGestureRecognizer(self.tapGesture!)
+        view.addGestureRecognizer(self.tapGesture)
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
@@ -153,10 +152,7 @@ extension CollectionViewController: UITextFieldDelegate {
     
     func keyboardWillHide(notification: Notification){
         //view.removeGestureRecognizer(self.tapGesture!)
-        if let tapGesture = tapGesture {
-            view.removeGestureRecognizer(tapGesture)
-            self.tapGesture = nil
-        }
+        view.removeGestureRecognizer(self.tapGesture)
         scrollView.contentInset = UIEdgeInsets.zero
     }
     

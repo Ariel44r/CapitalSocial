@@ -15,18 +15,24 @@ class ViewController: UIViewController {
     //MARK: variablesAndInstances
     var dict : [String : AnyObject]!
     var nameUserFB: String?
+    let transition = TransitionShare()
+    var startAnimationPoint: CGPoint?
     
     //MARK: outlets
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginFacebookButton: UIButton!
     @IBOutlet weak var textFieldPhone: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
     
     //MARK: actionButtons
     @IBAction func buttonLogInPhone(_ sender: Any) {
+        startAnimationPoint = loginButton.center
         logInPhoneRequest()
     }
     
     @IBAction func facebookButtonClicked(_ sender: Any) {
+        startAnimationPoint = loginFacebookButton.center
         loginFacebookInit()
     }
     
@@ -58,6 +64,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let collectionVC = segue.destination as! UITabBarController
+        collectionVC.transitioningDelegate = self
+        collectionVC.modalPresentationStyle = .custom
+    }
+    
     //MARK: Methods
     func loginFacebookInit() {
         let loginManager = LoginManager()
@@ -70,7 +82,7 @@ class ViewController: UIViewController {
             case .cancelled:
                 StaticMethod.PKHUD.errorAndTextHUD(Constants.messagesToUser.cancelledLogin)
                 break
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            case .success( _, _, _):
                 StaticMethod.PKHUD.viewProgressHUD()
                 self.getFBUserData() {
                     response, error in
@@ -172,6 +184,23 @@ extension ViewController: UITextFieldDelegate {
         scrollView.contentInset = UIEdgeInsets.zero
     }
     
+}
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = startAnimationPoint!
+        transition.bubbleColor = loginButton.backgroundColor!
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = startAnimationPoint!
+        transition.bubbleColor = loginButton.backgroundColor!
+        return transition
+    }
 }
 
 
