@@ -113,6 +113,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="ftT-dW-pe7"/>
                     <navigationItem key="navigationItem" id="pBP-xM-ZQj"/>
                     <connections>
+                        <outlet property="loginButton" destination="uyG-qD-2Rg" id="8Mg-Bc-g0F"/>
+                        <outlet property="loginFacebookButton" destination="kQx-Pv-tjO" id="EGe-RH-NYn"/>
                         <outlet property="scrollView" destination="nqL-xM-dRE" id="gbQ-zK-pcs"/>
                         <outlet property="textFieldPhone" destination="Gc7-lw-skm" id="z3J-YD-bQU"/>
                         <segue destination="Qkl-5J-Anb" kind="modal" identifier="promosSegue" modalTransitionStyle="flipHorizontal" id="b31-Om-TBy"/>

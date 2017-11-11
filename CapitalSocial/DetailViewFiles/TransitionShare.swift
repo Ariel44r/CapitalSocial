@@ -24,7 +24,7 @@ class TransitionShare: NSObject {
      The transition duration. The same value is used in both the Present or Dismiss actions
      Defaults to `0.5`
      */
-    open var duration = 0.5
+    open var duration = 0.8
     
     /**
      The transition direction. Possible values `.present`, `.dismiss` or `.pop`
