@@ -16,11 +16,14 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
     var promoName: String?
+    var cordinate: CGPoint?
+    let transition = TransitionShare()
 
     
     //MARK: outlets
     @IBOutlet weak var promoCollection: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var topView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +76,9 @@ extension CollectionViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         debugPrint("SELECT ITEM: \(indexPath.item)")
+        let cellContentView = collectionView.cellForItem(at: indexPath)?.contentView
+        let rect = cellContentView!.convert(cellContentView!.frame, to: self.view) // pass toView nil if you want to convert rect relative to window
+        cordinate = CGPoint(x: rect.origin.x + rect.size.width / 2, y: rect.origin.y + rect.size.height / 2)
         promoName = promos[indexPath.item]
         self.performSegue(withIdentifier: "segueDetail", sender: nil)
     }
@@ -164,6 +170,8 @@ extension CollectionViewController {
         let detailVC = segue.destination as! DetailViewController
         detailVC.delegate = self
         detailVC.promoName = self.promoName!
+        detailVC.transitioningDelegate = self
+        detailVC.modalPresentationStyle = .custom
     }
 }
 
@@ -173,4 +181,19 @@ extension CollectionViewController {
     }
 }
 
+extension CollectionViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = self.cordinate!
+        transition.bubbleColor = UIColor.clear
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = self.cordinate!
+        transition.bubbleColor = UIColor.clear
+        return transition
+    }
+}
 

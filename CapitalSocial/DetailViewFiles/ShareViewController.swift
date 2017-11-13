@@ -16,6 +16,9 @@ class ShareViewController: UIViewController {
     //MARK: variablesAndInstances
     var namePhoto: String? = nil
     
+    //MARK: outlets
+    
+    
     //MARK: actions
     @IBAction func shareFacebook(_ sender: Any) {
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
@@ -55,7 +58,6 @@ class ShareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

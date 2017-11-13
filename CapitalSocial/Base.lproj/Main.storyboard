@@ -308,6 +308,7 @@
                     <connections>
                         <outlet property="promoCollection" destination="bSE-w8-SpK" id="hxH-nW-5jl"/>
                         <outlet property="scrollView" destination="Mry-rL-lfh" id="fkO-R4-IJd"/>
+                        <outlet property="topView" destination="UDu-oP-kFs" id="R7l-fq-ONL"/>
                         <segue destination="udc-8D-KPS" kind="modal" identifier="segueDetail" modalTransitionStyle="flipHorizontal" id="1oH-tb-qVX"/>
                     </connections>
                 </viewController>
