@@ -531,46 +531,71 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5D5-M8-sXB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZI-1J-UbN">
-                                        <rect key="frame" x="267" y="158" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="RJW-Yw-hj1"/>
-                                            <constraint firstAttribute="height" constant="70" id="gBh-id-OuN"/>
-                                        </constraints>
-                                        <state key="normal" image="IconoCompartirFacebook@1.5x"/>
-                                        <connections>
-                                            <action selector="shareFacebook:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="u9j-dV-q7i"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-TV-l3O">
-                                        <rect key="frame" x="267" y="260" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="4Kh-pt-snn"/>
-                                            <constraint firstAttribute="width" constant="70" id="Qei-k3-Iqf"/>
-                                        </constraints>
-                                        <state key="normal" image="IconoCompartirTwitter@1.5x"/>
-                                        <connections>
-                                            <action selector="shareTwitter:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="UZt-t2-qHW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-6M-DSO">
-                                        <rect key="frame" x="267" y="362" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="DZU-rd-vhm"/>
-                                            <constraint firstAttribute="height" constant="70" id="JPP-VF-JnG"/>
-                                        </constraints>
-                                        <state key="normal" image="IconoCompartirWhats@1.5x"/>
-                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LogoSplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="YPN-d9-43K">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                                    </imageView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YkG-D0-vKv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n8G-BR-mOv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TL-6M-DSO">
+                                                    <rect key="frame" x="266" y="489" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="DZU-rd-vhm"/>
+                                                        <constraint firstAttribute="height" constant="70" id="JPP-VF-JnG"/>
+                                                    </constraints>
+                                                    <state key="normal" image="IconoCompartirWhats@1.5x"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZI-1J-UbN">
+                                                    <rect key="frame" x="266" y="275" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="RJW-Yw-hj1"/>
+                                                        <constraint firstAttribute="height" constant="70" id="gBh-id-OuN"/>
+                                                    </constraints>
+                                                    <state key="normal" image="IconoCompartirFacebook@1.5x"/>
+                                                    <connections>
+                                                        <action selector="shareFacebook:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="u9j-dV-q7i"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJe-TV-l3O">
+                                                    <rect key="frame" x="266" y="381" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="4Kh-pt-snn"/>
+                                                        <constraint firstAttribute="width" constant="70" id="Qei-k3-Iqf"/>
+                                                    </constraints>
+                                                    <state key="normal" image="IconoCompartirTwitter@1.5x"/>
+                                                    <connections>
+                                                        <action selector="shareTwitter:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="UZt-t2-qHW"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6TL-6M-DSO" firstAttribute="top" secondItem="AJe-TV-l3O" secondAttribute="bottom" constant="38" id="64l-sJ-L2L"/>
+                                                <constraint firstAttribute="trailing" secondItem="6TL-6M-DSO" secondAttribute="trailing" constant="39" id="O4B-wT-IBi"/>
+                                                <constraint firstItem="AJe-TV-l3O" firstAttribute="top" secondItem="bZI-1J-UbN" secondAttribute="bottom" constant="36" id="U3u-0d-v74"/>
+                                                <constraint firstItem="bZI-1J-UbN" firstAttribute="top" secondItem="n8G-BR-mOv" secondAttribute="top" constant="275" id="dB8-Uq-TBk"/>
+                                                <constraint firstAttribute="trailing" secondItem="AJe-TV-l3O" secondAttribute="trailing" constant="39" id="e8A-08-oY4"/>
+                                                <constraint firstAttribute="trailing" secondItem="bZI-1J-UbN" secondAttribute="trailing" constant="39" id="lPt-Oq-KAq"/>
+                                                <constraint firstAttribute="bottom" secondItem="6TL-6M-DSO" secondAttribute="bottom" constant="44" id="qED-s3-l8g"/>
+                                            </constraints>
+                                        </view>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="6TL-6M-DSO" secondAttribute="bottom" constant="171" id="0ei-o3-nR1"/>
-                                    <constraint firstItem="bZI-1J-UbN" firstAttribute="top" secondItem="5D5-M8-sXB" secondAttribute="top" constant="158" id="7GQ-7P-HBh"/>
-                                    <constraint firstAttribute="trailing" secondItem="AJe-TV-l3O" secondAttribute="trailing" constant="38" id="Cei-wV-tM5"/>
-                                    <constraint firstAttribute="trailing" secondItem="6TL-6M-DSO" secondAttribute="trailing" constant="38" id="Iyu-19-YmY"/>
-                                    <constraint firstAttribute="trailing" secondItem="bZI-1J-UbN" secondAttribute="trailing" constant="38" id="f8e-mx-bOy"/>
-                                    <constraint firstItem="6TL-6M-DSO" firstAttribute="top" secondItem="AJe-TV-l3O" secondAttribute="bottom" constant="32" id="kRQ-Ml-OxQ"/>
-                                    <constraint firstItem="AJe-TV-l3O" firstAttribute="top" secondItem="bZI-1J-UbN" secondAttribute="bottom" constant="32" id="wde-08-HpU"/>
+                                    <constraint firstAttribute="bottom" secondItem="YkG-D0-vKv" secondAttribute="bottom" id="6Rm-HY-VRa"/>
+                                    <constraint firstItem="YPN-d9-43K" firstAttribute="leading" secondItem="5D5-M8-sXB" secondAttribute="leading" id="E4e-zH-cQT"/>
+                                    <constraint firstItem="YkG-D0-vKv" firstAttribute="width" secondItem="5D5-M8-sXB" secondAttribute="width" id="L5N-QQ-Tmu"/>
+                                    <constraint firstAttribute="trailing" secondItem="YPN-d9-43K" secondAttribute="trailing" id="gxj-my-vh9"/>
+                                    <constraint firstItem="YPN-d9-43K" firstAttribute="top" secondItem="5D5-M8-sXB" secondAttribute="top" id="nf1-NA-cuM"/>
+                                    <constraint firstAttribute="trailing" secondItem="YkG-D0-vKv" secondAttribute="trailing" id="qGP-7p-12P"/>
+                                    <constraint firstAttribute="bottom" secondItem="YPN-d9-43K" secondAttribute="bottom" constant="375" id="rBj-0P-R9F"/>
+                                    <constraint firstItem="YkG-D0-vKv" firstAttribute="leading" secondItem="5D5-M8-sXB" secondAttribute="leading" id="tpV-ga-SzF"/>
+                                    <constraint firstItem="YkG-D0-vKv" firstAttribute="top" secondItem="5D5-M8-sXB" secondAttribute="top" id="vTb-ff-0Im"/>
+                                    <constraint firstItem="YkG-D0-vKv" firstAttribute="height" secondItem="5D5-M8-sXB" secondAttribute="height" id="zZY-xh-oVd"/>
                                 </constraints>
                             </view>
                         </subviews>

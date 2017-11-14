@@ -50,10 +50,10 @@ class StaticMethod {
         }
         static func errorAndTextHUD(_ text: String) {
             HUD.show(.error)
-            HUD.hide(afterDelay: 1.5, completion: {
+            HUD.hide(afterDelay: 0.75, completion: {
                 error in
                 HUD.show(.label(text))
-                HUD.hide(afterDelay: 4.0)
+                HUD.hide(afterDelay: 3.0)
             })
         }
         static func successHUD() {
