@@ -8,6 +8,7 @@
 		<string>fb-messenger-api</string>
 		<string>fbauth2</string>
 		<string>fbshareextension</string>
+        <string>whatsapp</string>
 	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -65,9 +66,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>whatsapp</string>
-    </array>
 </dict>
 </plist>
