@@ -15,6 +15,7 @@ class ShareViewController: UIViewController {
 
     //MARK: variablesAndInstances
     var namePhoto: String? = nil
+    var documentInteractionController: UIDocumentInteractionController = UIDocumentInteractionController()
     
     //MARK: outlets
     
@@ -49,7 +50,33 @@ class ShareViewController: UIViewController {
         }
     }
     @IBAction func shareWhatsApp(_ sender: Any) {
-        
+        debugPrint("WhatsApp SHARE!")
+        let urlWhats = "whatsapp://app"
+        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlQueryAllowed) {
+            if let whatsappURL = URL(string: urlString) {
+                
+                if UIApplication.shared.canOpenURL(whatsappURL as URL) {
+                    
+                    if let image = UIImage(named: namePhoto!) {
+                        if let imageData = UIImageJPEGRepresentation(image, 1.0) {
+                            let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai")
+                            do {
+                                try imageData.write(to: tempFile, options: .atomic)
+                                self.documentInteractionController = UIDocumentInteractionController(url: tempFile)
+                                self.documentInteractionController.uti = "net.whatsapp.image"
+                                self.documentInteractionController.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
+                                
+                            } catch {
+                                print(error)
+                            }
+                        }
+                    }
+                    
+                } else {
+                    // Cannot open whatsapp
+                }
+            }
+        }
     }
     
     @IBAction func backButton(_ sender: Any) {

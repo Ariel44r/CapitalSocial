@@ -546,7 +546,10 @@
                                                         <constraint firstAttribute="width" constant="70" id="DZU-rd-vhm"/>
                                                         <constraint firstAttribute="height" constant="70" id="JPP-VF-JnG"/>
                                                     </constraints>
-                                                    <state key="normal" image="IconoCompartirWhats@1.5x"/>
+                                                    <state key="normal" image="whatsapp"/>
+                                                    <connections>
+                                                        <action selector="shareWhatsApp:" destination="CyP-wK-wbJ" eventType="touchUpInside" id="IcX-ew-LX4"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZI-1J-UbN">
                                                     <rect key="frame" x="266" y="275" width="70" height="70"/>
@@ -626,10 +629,10 @@
         <image name="IconoCompartir@1.5x" width="56" height="60"/>
         <image name="IconoCompartirFacebook@1.5x" width="27" height="57"/>
         <image name="IconoCompartirTwitter@1.5x" width="63" height="51"/>
-        <image name="IconoCompartirWhats@1.5x" width="48" height="45"/>
         <image name="IconoFacebook" width="20" height="36"/>
         <image name="LogoSplashScreen" width="596" height="234"/>
         <image name="PromoBenavides.png" width="356" height="234"/>
         <image name="telefono" width="32" height="30"/>
+        <image name="whatsapp" width="180" height="176"/>
     </resources>
 </document>

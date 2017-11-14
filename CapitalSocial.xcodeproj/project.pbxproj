@@ -50,6 +50,8 @@
 /* Begin PBXFileReference section */
 		221A85169CBE7B6203CD7606 /* Pods_CapitalSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CapitalSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1F2B021FA405B60032D6A0 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4F4FF9041FBA7100008BF166 /* WhatsappShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappShareUITests.swift; sourceTree = "<group>"; };
+		4F4FF9051FBA7116008BF166 /* WhatsappShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappShareTests.swift; sourceTree = "<group>"; };
 		4F54DB7A1FAAAEF800412F60 /* Promo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promo.swift; sourceTree = "<group>"; };
 		4F54FFF81FAE69970036F906 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,15 @@
 			path = UtilsFiles;
 			sourceTree = "<group>";
 		};
+		4F4FF9031FBA70E6008BF166 /* WhatsAppFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4F4FF9051FBA7116008BF166 /* WhatsappShareTests.swift */,
+				4F4FF9041FBA7100008BF166 /* WhatsappShareUITests.swift */,
+			);
+			path = WhatsAppFiles;
+			sourceTree = "<group>";
+		};
 		4F54FFFC1FAE6C790036F906 /* MapKitFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +208,7 @@
 		4FEC9CBE1FA2B47D000643EB /* CapitalSocial */ = {
 			isa = PBXGroup;
 			children = (
+				4F4FF9031FBA70E6008BF166 /* WhatsAppFiles */,
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
