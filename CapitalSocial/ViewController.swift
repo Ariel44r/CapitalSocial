@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var dict : [String : AnyObject]!
     var nameUserFB: String?
     let transition = TransitionShare()
-    var startAnimationPoint: CGPoint?
+    var startAnimationPoint = CGPoint(x: 0.0, y: 0.0)
     
     //MARK: outlets
     @IBOutlet weak var loginButton: UIButton!
@@ -42,6 +42,11 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
         view.addGestureRecognizer(tapGesture)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        if DataPersistence.checkIfUserIsLogged().isLogged {
+            self.performSegue(withIdentifier: "promosSegue", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -192,14 +197,14 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
-        transition.startingPoint = startAnimationPoint!
+        transition.startingPoint = startAnimationPoint
         transition.bubbleColor = loginButton.backgroundColor!
         return transition
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
-        transition.startingPoint = startAnimationPoint!
+        transition.startingPoint = startAnimationPoint
         transition.bubbleColor = loginButton.backgroundColor!
         return transition
     }
