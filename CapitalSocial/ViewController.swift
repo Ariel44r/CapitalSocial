@@ -128,6 +128,9 @@ extension ViewController {
                 if (result != nil){
                     self.dict = result as! [String : AnyObject]
                     OperationQueue.main.addOperation({completion((self.dict["name"] as! String), nil)})
+                    debugPrint(self.dict)
+                    let facebookData = FaceBookData(self.dict)
+                    DataPersistence.saveUserData(facebookData)
                 }
             })
         }

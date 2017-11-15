@@ -50,32 +50,11 @@ class ShareViewController: UIViewController {
         }
     }
     @IBAction func shareWhatsApp(_ sender: Any) {
-        debugPrint("WhatsApp SHARE!")
-        let urlWhats = "whatsapp://app"
-        if let urlString = urlWhats.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlQueryAllowed) {
-            if let whatsappURL = URL(string: urlString) {
-                
-                if UIApplication.shared.canOpenURL(whatsappURL as URL) {
-                    
-                    if let image = UIImage(named: namePhoto!) {
-                        if let imageData = UIImageJPEGRepresentation(image, 1.0) {
-                            let tempFile = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Documents/whatsAppTmp.wai")
-                            do {
-                                try imageData.write(to: tempFile, options: .atomic)
-                                self.documentInteractionController = UIDocumentInteractionController(url: tempFile)
-                                self.documentInteractionController.uti = "net.whatsapp.image"
-                                self.documentInteractionController.presentOpenInMenu(from: CGRect.zero, in: self.view, animated: true)
-                                
-                            } catch {
-                                print(error)
-                            }
-                        }
-                    }
-                    
-                } else {
-                    // Cannot open whatsapp
-                }
-            }
+        let originalString = namePhoto!
+        let escapedString = originalString.addingPercentEncoding(withAllowedCharacters:CharacterSet.urlQueryAllowed)
+        let url  = URL(string: "whatsapp://send?text=\(escapedString!)")
+        if UIApplication.shared.canOpenURL(url! as URL) {
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         }
     }
     
@@ -93,15 +72,4 @@ class ShareViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

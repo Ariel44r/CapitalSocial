@@ -13,8 +13,11 @@
 		4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F87EAF31FB121FF0076B58D /* Annotation.swift */; };
+		4FADCB411FBBAD3D0091AA0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FADCB401FBBAD3D0091AA0D /* SettingsViewController.swift */; };
 		4FB4B8071FB2B7B1003E098B /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */; };
 		4FB4B8091FB2BC1C003E098B /* TransitionShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */; };
+		4FBE26C41FBBB58700AFCC7F /* FacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE26C31FBBB58700AFCC7F /* FacebookData.swift */; };
+		4FBE26C71FBBB65900AFCC7F /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBE26C61FBBB65900AFCC7F /* DataPersistence.swift */; };
 		4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */; };
 		4FC971591FB13A4800497606 /* DataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC971581FB13A4800497606 /* DataBaseManager.swift */; };
 		4FCFC5BA1FA7DA7800A1C091 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */; };
@@ -59,8 +62,11 @@
 		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4F87EAF31FB121FF0076B58D /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		4FADCB401FBBAD3D0091AA0D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4FB4B8061FB2B7B1003E098B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		4FB4B8081FB2BC1C003E098B /* TransitionShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionShare.swift; sourceTree = "<group>"; };
+		4FBE26C31FBBB58700AFCC7F /* FacebookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookData.swift; sourceTree = "<group>"; };
+		4FBE26C61FBBB65900AFCC7F /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
 		4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamoFire.swift; sourceTree = "<group>"; };
 		4FC971581FB13A4800497606 /* DataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataBaseManager.swift; path = CapitalSocial/DataBase/DataBaseManager.swift; sourceTree = SOURCE_ROOT; };
 		4FCFC5B91FA7DA7800A1C091 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -172,6 +178,23 @@
 			path = ServerManager;
 			sourceTree = "<group>";
 		};
+		4FADCB421FBBAD450091AA0D /* UserSettingsFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4FADCB401FBBAD3D0091AA0D /* SettingsViewController.swift */,
+			);
+			path = UserSettingsFiles;
+			sourceTree = "<group>";
+		};
+		4FBE26C51FBBB58F00AFCC7F /* FacebookDataFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4FBE26C31FBBB58700AFCC7F /* FacebookData.swift */,
+				4FBE26C61FBBB65900AFCC7F /* DataPersistence.swift */,
+			);
+			path = FacebookDataFiles;
+			sourceTree = "<group>";
+		};
 		4FCFC5BB1FA7DA7D00A1C091 /* CollectionControllerFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,10 +231,12 @@
 		4FEC9CBE1FA2B47D000643EB /* CapitalSocial */ = {
 			isa = PBXGroup;
 			children = (
-				4F4FF9031FBA70E6008BF166 /* WhatsAppFiles */,
 				4FEC9CBF1FA2B47D000643EB /* AppDelegate.swift */,
 				4FEC9CC11FA2B47D000643EB /* ViewController.swift */,
+				4FBE26C51FBBB58F00AFCC7F /* FacebookDataFiles */,
 				4FEC9CC31FA2B47D000643EB /* Main.storyboard */,
+				4F4FF9031FBA70E6008BF166 /* WhatsAppFiles */,
+				4FADCB421FBBAD450091AA0D /* UserSettingsFiles */,
 				4F54FFFC1FAE6C790036F906 /* MapKitFiles */,
 				4F5AEB5E1FAD3325000A8C4C /* DetailViewFiles */,
 				4FCFC5BB1FA7DA7D00A1C091 /* CollectionControllerFiles */,
@@ -465,7 +490,10 @@
 				4FEC9CC21FA2B47D000643EB /* ViewController.swift in Sources */,
 				4FEC9CC01FA2B47D000643EB /* AppDelegate.swift in Sources */,
 				4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */,
+				4FBE26C41FBBB58700AFCC7F /* FacebookData.swift in Sources */,
 				4FB4B8091FB2BC1C003E098B /* TransitionShare.swift in Sources */,
+				4FADCB411FBBAD3D0091AA0D /* SettingsViewController.swift in Sources */,
+				4FBE26C71FBBB65900AFCC7F /* DataPersistence.swift in Sources */,
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
 				4FD2501F1FA808F10019254C /* PromosProcess.swift in Sources */,
