@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
                 labelName.text = "Hola " + userData.name
             }
         } else {
-            debugPrint("THE PROGRAM FAILS DUDE! :´(")
+            debugPrint("THE USER IS NOT LOGGED DUDE! :´(")
         }
         // Do any additional setup after loading the view.
     }

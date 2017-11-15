@@ -79,7 +79,7 @@ class DetailViewController: UIViewController, UIViewControllerTransitioningDeleg
     
     func fillInFields(_ promoName: String) {
         mainImage.image = UIImage(named: promoName + ".png")
-        tumbnailImage.image = UIImage(named: promoName + "@1.5x" + ".png")
+        tumbnailImage.image = UIImage(named: "LogoPapaJohns@1.5x.png")
         payOffLabel.text = StaticMethod.StringProcess.replaceStringWithString(promoName, "Promo", "")
     }
     

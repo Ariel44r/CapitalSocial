@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -232,10 +233,11 @@
                                                         </label>
                                                     </subviews>
                                                 </view>
+                                                <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="kAv-Iu-Qrl" firstAttribute="top" secondItem="dOw-xl-aWW" secondAttribute="bottom" constant="7" id="6Qt-Le-Ox0"/>
                                                     <constraint firstItem="dOw-xl-aWW" firstAttribute="top" secondItem="d1h-vK-HPs" secondAttribute="top" id="ABe-OG-uQX"/>
-                                                    <constraint firstItem="kAv-Iu-Qrl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="d1h-vK-HPs" secondAttribute="leading" symbolic="YES" id="Bbj-g3-Dpb"/>
+                                                    <constraint firstItem="kAv-Iu-Qrl" firstAttribute="leading" secondItem="d1h-vK-HPs" secondAttribute="leading" symbolic="YES" id="Bbj-g3-Dpb"/>
                                                     <constraint firstItem="kAv-Iu-Qrl" firstAttribute="width" secondItem="d1h-vK-HPs" secondAttribute="width" id="Mdn-Ob-hwU"/>
                                                     <constraint firstAttribute="trailing" secondItem="kAv-Iu-Qrl" secondAttribute="trailing" id="QZI-7o-qoB"/>
                                                     <constraint firstAttribute="bottom" secondItem="kAv-Iu-Qrl" secondAttribute="bottom" constant="9" id="Rhh-or-QTy"/>
@@ -379,11 +381,11 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PromoBenavides.png" translatesAutoresizingMaskIntoConstraints="NO" id="gtE-HT-GJV">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="234"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="PromoBenavides.png" translatesAutoresizingMaskIntoConstraints="NO" id="NFq-bZ-iYh">
-                                                <rect key="frame" x="60" y="242" width="255" height="181"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" image="LogoPapaJohns@1.5x" translatesAutoresizingMaskIntoConstraints="NO" id="NFq-bZ-iYh">
+                                                <rect key="frame" x="61" y="242" width="254" height="181"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% pay off" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AUt-4y-KSK">
-                                                <rect key="frame" x="147.5" y="463" width="81" height="24"/>
+                                                <rect key="frame" x="147" y="463" width="81" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -414,6 +416,7 @@
                                             <constraint firstItem="AUt-4y-KSK" firstAttribute="top" secondItem="NFq-bZ-iYh" secondAttribute="bottom" constant="40" id="BCW-Gt-Dob"/>
                                             <constraint firstItem="Xns-sa-lpI" firstAttribute="centerX" secondItem="stT-Fr-vK9" secondAttribute="centerX" id="DCA-Sl-6Vn"/>
                                             <constraint firstItem="NFq-bZ-iYh" firstAttribute="top" secondItem="gtE-HT-GJV" secondAttribute="bottom" constant="8" id="Ju7-D8-b9C"/>
+                                            <constraint firstItem="Xns-sa-lpI" firstAttribute="top" secondItem="AUt-4y-KSK" secondAttribute="bottom" constant="38" id="Mf0-Ju-BHv"/>
                                             <constraint firstItem="AUt-4y-KSK" firstAttribute="centerX" secondItem="stT-Fr-vK9" secondAttribute="centerX" id="Pth-FY-LDM"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NFq-bZ-iYh" secondAttribute="trailing" constant="60" id="UkY-FG-TAM"/>
                                             <constraint firstItem="NFq-bZ-iYh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="stT-Fr-vK9" secondAttribute="leading" constant="60" id="Y4G-O6-aPJ"/>
@@ -423,6 +426,7 @@
                                             <constraint firstAttribute="bottom" secondItem="Xns-sa-lpI" secondAttribute="bottom" constant="8" id="afl-rw-VYs"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xns-sa-lpI" secondAttribute="bottom" constant="8" id="apx-hD-RzD"/>
                                             <constraint firstItem="NFq-bZ-iYh" firstAttribute="centerX" secondItem="stT-Fr-vK9" secondAttribute="centerX" id="iBm-hS-Hpo"/>
+                                            <constraint firstItem="Xns-sa-lpI" firstAttribute="leading" secondItem="stT-Fr-vK9" secondAttribute="leadingMargin" id="iR0-do-lL9"/>
                                             <constraint firstAttribute="trailing" secondItem="Xns-sa-lpI" secondAttribute="trailing" constant="8" id="uFf-bi-iGl"/>
                                             <constraint firstItem="Xns-sa-lpI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="stT-Fr-vK9" secondAttribute="leading" constant="8" id="umc-j7-k3h"/>
                                             <constraint firstItem="gtE-HT-GJV" firstAttribute="centerX" secondItem="stT-Fr-vK9" secondAttribute="centerX" id="zyN-K9-kCa"/>
@@ -692,7 +696,7 @@
                                                 <constraint firstItem="qie-Ga-wEX" firstAttribute="top" secondItem="lLI-DX-v6l" secondAttribute="top" constant="31" id="rQC-2n-aqb"/>
                                             </constraints>
                                         </view>
-                                        <blurEffect style="light"/>
+                                        <blurEffect style="prominent"/>
                                     </visualEffectView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -742,6 +746,7 @@
         <image name="IconoCompartirFacebook@1.5x" width="27" height="57"/>
         <image name="IconoCompartirTwitter@1.5x" width="63" height="51"/>
         <image name="IconoFacebook" width="20" height="36"/>
+        <image name="LogoPapaJohns@1.5x" width="284" height="182"/>
         <image name="LogoSplashScreen" width="596" height="234"/>
         <image name="PromoBenavides.png" width="356" height="234"/>
         <image name="telefono" width="32" height="30"/>

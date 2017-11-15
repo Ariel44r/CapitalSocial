@@ -71,6 +71,7 @@ extension CollectionViewController {
         //cell.backgroundColor = UIColor.cyan
         cell.promoImage.image = UIImage(named: promos[indexPath.item] + "@1.5x" + ".png")
         cell.promoLabel.text = StaticMethod.StringProcess.replaceStringWithString(promos[indexPath.item], "Promo", "")
+        cell.promoLabel.textColor = UIColor.white
         return cell
     }
     

@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         ServerManager.databaseDownload(databaseURL: Constants.dataBase.URLDB)
         // Do any additional setup after loading the view, typically from a nib.
-        faceBookLogInButton()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
         view.addGestureRecognizer(tapGesture)
     }
