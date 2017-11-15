@@ -24,7 +24,9 @@ class MapKitViewController: UIViewController {
     }
     
     func mapPlace() {
-        MapView.addAnnotations(DataBaseManager.getAnnotations())
+        let annotations = DataBaseManager.getAnnotations()
+        MapView.addAnnotations(annotations)
+        MapView.showAnnotations(MapView.annotations, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

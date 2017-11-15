@@ -15,12 +15,18 @@ class SettingsViewController: UIViewController {
     
     //MARK: actions
     @IBAction func logOutButton(_ sender: Any) {
-        self.performSegue(withIdentifier: "segueLogOut", sender: nil)
         DataPersistence.removeUserData()
+        self.performSegue(withIdentifier: "segueLogOut", sender: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        labelName.text = "Hola Usuario!"
+        validateIfIsLogged()
+        // Do any additional setup after loading the view.
+    }
+
+    func validateIfIsLogged() {
         let isLogged = DataPersistence.checkIfUserIsLogged()
         if isLogged.isLogged {
             if let userData = isLogged.userData {
@@ -30,9 +36,8 @@ class SettingsViewController: UIViewController {
         } else {
             debugPrint("THE USER IS NOT LOGGED DUDE! :´(")
         }
-        // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -63,8 +63,11 @@ class StaticMethod {
             self.successHUD()
             HUD.hide(afterDelay: 0.5, completion: {
                 error in
-                HUD.flash(.label((Constants.messagesToUser.welcome + text)), delay: 2.0)
+                HUD.flash(.label((Constants.messagesToUser.welcome + text)), delay: 1.5)
             })
+        }
+        static func textHUD(_ text: String) {
+            HUD.flash(.label(text),delay: 1.5)
         }
     }
     struct StringProcess {

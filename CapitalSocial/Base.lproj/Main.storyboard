@@ -23,12 +23,13 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyG-qD-2Rg">
-                                        <rect key="frame" x="8" y="531" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="531" width="359" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.31961371163575747" blue="0.5980192660564948" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="hoU-Br-PV1"/>
+                                            <constraint firstAttribute="height" constant="50" id="hoU-Br-PV1"/>
                                         </constraints>
-                                        <state key="normal" title="Login with Phone">
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Ingresar con mi Teléfono">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -39,7 +40,7 @@
                                         <rect key="frame" x="8" y="35" width="351" height="234"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gc7-lw-skm">
-                                        <rect key="frame" x="8" y="480" width="351" height="30"/>
+                                        <rect key="frame" x="59" y="480" width="300" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -47,22 +48,20 @@
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="jbV-7Q-qbu"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="       Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-LZ-YGr">
-                                        <rect key="frame" x="80" y="447" width="287" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Teléfono" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IY-LZ-YGr">
+                                        <rect key="frame" x="59" y="447" width="308" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.094962476554267927" blue="0.62553996209267826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telefono" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-jJ-dTo">
-                                        <rect key="frame" x="49" y="442" width="32" height="30"/>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQx-Pv-tjO">
-                                        <rect key="frame" x="8" y="277" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="267" width="359" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="bAd-ko-OlZ"/>
+                                            <constraint firstAttribute="height" constant="50" id="bAd-ko-OlZ"/>
                                         </constraints>
-                                        <state key="normal" title="Login with Facebook">
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Ingresar con Facebook">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -70,33 +69,36 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconoFacebook" translatesAutoresizingMaskIntoConstraints="NO" id="Rvn-jC-HT1">
-                                        <rect key="frame" x="55" y="274" width="20" height="36"/>
+                                        <rect key="frame" x="25" y="274" width="20" height="36"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="telefono" translatesAutoresizingMaskIntoConstraints="NO" id="Pka-jJ-dTo">
+                                        <rect key="frame" x="19" y="480" width="32" height="30"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Gc7-lw-skm" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="8" id="2gg-zd-PIs"/>
+                                    <constraint firstItem="Gc7-lw-skm" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="59" id="2gg-zd-PIs"/>
                                     <constraint firstItem="vbT-QN-Z6w" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="8" id="41t-Is-QkO"/>
                                     <constraint firstAttribute="trailing" secondItem="uyG-qD-2Rg" secondAttribute="trailing" constant="8" id="6wb-T8-WMu"/>
-                                    <constraint firstItem="kQx-Pv-tjO" firstAttribute="top" secondItem="vbT-QN-Z6w" secondAttribute="bottom" constant="8" symbolic="YES" id="9RJ-OZ-RbH"/>
+                                    <constraint firstItem="kQx-Pv-tjO" firstAttribute="top" secondItem="vbT-QN-Z6w" secondAttribute="bottom" constant="-2" id="9RJ-OZ-RbH"/>
                                     <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="uyG-qD-2Rg" secondAttribute="bottom" constant="86" id="Dld-bU-Yrn"/>
                                     <constraint firstItem="uyG-qD-2Rg" firstAttribute="top" secondItem="Gc7-lw-skm" secondAttribute="bottom" constant="21" id="E3j-KE-6JR"/>
-                                    <constraint firstItem="Rvn-jC-HT1" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="55" id="FjP-23-kOF"/>
+                                    <constraint firstItem="Rvn-jC-HT1" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="25" id="FjP-23-kOF"/>
                                     <constraint firstItem="Gc7-lw-skm" firstAttribute="top" secondItem="nqL-xM-dRE" secondAttribute="top" constant="480" id="GE1-Ph-8kC"/>
                                     <constraint firstItem="kQx-Pv-tjO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="8" id="KJ9-5C-3D6"/>
                                     <constraint firstAttribute="trailing" secondItem="vbT-QN-Z6w" secondAttribute="trailing" constant="16" id="KQ2-ru-3Cc"/>
-                                    <constraint firstItem="5IY-LZ-YGr" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="80" id="KVM-1r-4cx"/>
+                                    <constraint firstItem="5IY-LZ-YGr" firstAttribute="leading" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="59" id="KVM-1r-4cx"/>
                                     <constraint firstItem="vbT-QN-Z6w" firstAttribute="top" secondItem="nqL-xM-dRE" secondAttribute="top" constant="35" id="TVD-59-pTf"/>
                                     <constraint firstItem="uyG-qD-2Rg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="nqL-xM-dRE" secondAttribute="leading" constant="8" id="Wzd-C6-pYq"/>
                                     <constraint firstAttribute="bottom" secondItem="vbT-QN-Z6w" secondAttribute="bottom" constant="378" id="XXo-bK-hcA"/>
                                     <constraint firstItem="vbT-QN-Z6w" firstAttribute="leading" secondItem="uyG-qD-2Rg" secondAttribute="leading" id="Xcp-fs-Yeg"/>
-                                    <constraint firstItem="Pka-jJ-dTo" firstAttribute="centerY" secondItem="5IY-LZ-YGr" secondAttribute="centerY" id="bT6-RU-D8E"/>
+                                    <constraint firstItem="Pka-jJ-dTo" firstAttribute="centerY" secondItem="5IY-LZ-YGr" secondAttribute="centerY" constant="38" id="bT6-RU-D8E"/>
                                     <constraint firstAttribute="trailing" secondItem="kQx-Pv-tjO" secondAttribute="trailing" constant="8" id="cFL-sN-HIo"/>
                                     <constraint firstItem="Rvn-jC-HT1" firstAttribute="centerX" secondItem="Pka-jJ-dTo" secondAttribute="centerX" id="hQI-fl-IgV"/>
                                     <constraint firstItem="Rvn-jC-HT1" firstAttribute="top" secondItem="vbT-QN-Z6w" secondAttribute="bottom" constant="5" id="i48-fz-Jaf"/>
                                     <constraint firstAttribute="trailing" secondItem="Gc7-lw-skm" secondAttribute="trailing" constant="16" id="iwi-tL-FXn"/>
                                     <constraint firstItem="5IY-LZ-YGr" firstAttribute="trailing" secondItem="uyG-qD-2Rg" secondAttribute="trailing" id="pcu-1r-WCu"/>
-                                    <constraint firstItem="uyG-qD-2Rg" firstAttribute="top" secondItem="Pka-jJ-dTo" secondAttribute="bottom" constant="59" id="ui6-Dk-X2s"/>
-                                    <constraint firstItem="vbT-QN-Z6w" firstAttribute="leading" secondItem="Gc7-lw-skm" secondAttribute="leading" id="wxU-Ij-k1g"/>
+                                    <constraint firstItem="uyG-qD-2Rg" firstAttribute="top" secondItem="Pka-jJ-dTo" secondAttribute="bottom" constant="21" id="ui6-Dk-X2s"/>
+                                    <constraint firstItem="vbT-QN-Z6w" firstAttribute="leading" secondItem="Gc7-lw-skm" secondAttribute="leading" constant="-51" id="wxU-Ij-k1g"/>
                                     <constraint firstItem="vbT-QN-Z6w" firstAttribute="leading" secondItem="kQx-Pv-tjO" secondAttribute="leading" id="xkJ-PV-W3e"/>
                                     <constraint firstItem="vbT-QN-Z6w" firstAttribute="centerX" secondItem="nqL-xM-dRE" secondAttribute="centerX" constant="-4" id="zmQ-G2-aIU"/>
                                 </constraints>
@@ -123,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="112"/>
+            <point key="canvasLocation" x="344.80000000000001" y="111.99400299850076"/>
         </scene>
         <!--Sitios de interés-->
         <scene sceneID="ixH-An-fVt">
