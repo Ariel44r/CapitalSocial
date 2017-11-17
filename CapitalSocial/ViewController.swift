@@ -39,14 +39,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //DataPersistence.removeUserData()
         ServerManager.databaseDownload(databaseURL: Constants.dataBase.URLDB)
         // Do any additional setup after loading the view, typically from a nib.
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
         view.addGestureRecognizer(tapGesture)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         if DataPersistence.checkIfUserIsLogged().isLogged {
             self.performSegue(withIdentifier: "promosSegue", sender: nil)
+            if let userData = DataPersistence.checkIfUserIsLogged().userData {
+                ServerManager.downloadPhoto(userData.photoURL!)
+            }
         }
     }
     

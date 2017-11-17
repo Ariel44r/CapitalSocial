@@ -681,8 +681,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qnj-yH-lbM">
-                                                    <rect key="frame" x="8" y="441" width="359" height="30"/>
+                                                    <rect key="frame" x="8" y="461" width="359" height="50"/>
                                                     <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="51Y-pi-4Nc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Cerrar Sesion">
                                                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
@@ -690,15 +694,22 @@
                                                         <action selector="logOutButton:" destination="gff-Um-yE2" eventType="touchUpInside" id="fhg-Yj-PI0"/>
                                                     </connections>
                                                 </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W7u-VK-BwE">
+                                                    <rect key="frame" x="77" y="106" width="220" height="258"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="qnj-yH-lbM" secondAttribute="bottom" constant="43" id="06f-CQ-qx3"/>
+                                                <constraint firstAttribute="trailing" secondItem="W7u-VK-BwE" secondAttribute="trailing" constant="78" id="BEY-43-H5A"/>
                                                 <constraint firstItem="qie-Ga-wEX" firstAttribute="leading" secondItem="lLI-DX-v6l" secondAttribute="leading" constant="8" id="KNH-kB-71z"/>
-                                                <constraint firstAttribute="bottom" secondItem="qnj-yH-lbM" secondAttribute="bottom" constant="83" id="Kdw-Hs-Dwj"/>
                                                 <constraint firstAttribute="trailing" secondItem="qie-Ga-wEX" secondAttribute="trailing" constant="8" id="M73-Yc-yie"/>
-                                                <constraint firstAttribute="trailing" secondItem="qnj-yH-lbM" secondAttribute="trailing" constant="8" id="Xws-5E-KGw"/>
-                                                <constraint firstItem="qnj-yH-lbM" firstAttribute="leading" secondItem="lLI-DX-v6l" secondAttribute="leading" constant="8" id="YGu-9p-jVZ"/>
+                                                <constraint firstItem="qnj-yH-lbM" firstAttribute="trailing" secondItem="qie-Ga-wEX" secondAttribute="trailing" id="Nwt-v2-NNH"/>
+                                                <constraint firstItem="W7u-VK-BwE" firstAttribute="top" secondItem="qie-Ga-wEX" secondAttribute="bottom" constant="30" id="RtS-j2-COf"/>
+                                                <constraint firstItem="qnj-yH-lbM" firstAttribute="top" secondItem="W7u-VK-BwE" secondAttribute="bottom" constant="97" id="UOY-jh-l9R"/>
                                                 <constraint firstItem="qie-Ga-wEX" firstAttribute="centerY" secondItem="lLI-DX-v6l" secondAttribute="centerY" constant="-223.5" id="bcK-bS-kYa"/>
+                                                <constraint firstItem="qnj-yH-lbM" firstAttribute="leading" secondItem="qie-Ga-wEX" secondAttribute="leading" id="jrA-WS-k8g"/>
                                                 <constraint firstItem="qie-Ga-wEX" firstAttribute="top" secondItem="lLI-DX-v6l" secondAttribute="top" constant="31" id="rQC-2n-aqb"/>
+                                                <constraint firstItem="W7u-VK-BwE" firstAttribute="leading" secondItem="lLI-DX-v6l" secondAttribute="leading" constant="77" id="yix-Vp-Vg9"/>
                                             </constraints>
                                         </view>
                                         <blurEffect style="prominent"/>
@@ -738,6 +749,7 @@
                     <tabBarItem key="tabBarItem" systemItem="more" id="Ln3-5m-6M6"/>
                     <connections>
                         <outlet property="labelName" destination="qie-Ga-wEX" id="ARp-dQ-9gE"/>
+                        <outlet property="userImage" destination="W7u-VK-BwE" id="Nk7-7y-hBd"/>
                         <segue destination="BYZ-38-t0r" kind="modal" identifier="segueLogOut" id="vfA-Uo-7Wu"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
 
     //MARK: outlets
     @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    
     
     //MARK: actions
     @IBAction func logOutButton(_ sender: Any) {
@@ -32,7 +34,11 @@ class SettingsViewController: UIViewController {
             if let userData = isLogged.userData {
                 debugPrint(userData)
                 labelName.text = "Hola " + userData.name
-                ServerManager.downloadPhoto(userData.photoURL!)
+                if let photoURL = userData.photoURL {
+                    if let photoPath = ServerManager.photoPath {
+                        userImage.image = UIImage(named: photoPath)
+                    }
+                }
             }
         } else {
             debugPrint("THE USER IS NOT LOGGED DUDE! :´(")
