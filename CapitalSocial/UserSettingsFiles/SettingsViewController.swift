@@ -32,6 +32,7 @@ class SettingsViewController: UIViewController {
             if let userData = isLogged.userData {
                 debugPrint(userData)
                 labelName.text = "Hola " + userData.name
+                ServerManager.downloadPhoto(userData.photoURL!)
             }
         } else {
             debugPrint("THE USER IS NOT LOGGED DUDE! :´(")

@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     @IBAction func buttonLogInPhone(_ sender: Any) {
         startAnimationPoint = loginButton.center
         logInPhoneRequest()
+        DataPersistence.saveUserDataPhone(textFieldPhone.text!)
     }
     
     @IBAction func facebookButtonClicked(_ sender: Any) {

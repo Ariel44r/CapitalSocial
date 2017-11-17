@@ -9,10 +9,9 @@
 import UIKit
 import MapKit
 
-class MapKitViewController: UIViewController {
+class MapKitViewController: UIViewController, MKMapViewDelegate {
 
     //MARK: Variables
-    
     
     //Outlets
     @IBOutlet weak var MapView: MKMapView!
@@ -34,7 +33,40 @@ class MapKitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let selectedAnnotation = view.annotation as? Annotation {
+            displayalert("Obtener Dirección de \(selectedAnnotation.title!)?", selectedAnnotation)
+        }
+    }
+    
+    func displayalert(_ userMessage:String, _ annotation: Annotation) {
+        
+        let myalert = UIAlertController(title:"Aviso", message:userMessage, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title:"ok", style: UIAlertActionStyle.default, handler:{ (action: UIAlertAction!) in
+            //callMaps
+            self.goToMaps(annotation)
+        })
+        myalert.addAction(okAction)
+        
+        let cancelaction = UIAlertAction(title:"cancel", style: UIAlertActionStyle.default, handler:nil)
+        myalert.addAction(cancelaction)
+        
+        self.present(myalert, animated:true, completion:nil)
+    }
+    
+    func goToMaps(_ annotation: Annotation) {
+        let currentLocMapItem = MKMapItem.forCurrentLocation()
+        let selectedPlacemark = MKPlacemark(coordinate: annotation.coordinate, addressDictionary: nil)
+        let selectedMapItem = MKMapItem(placemark: selectedPlacemark)
+        
+        let mapItems = [selectedMapItem, currentLocMapItem]
+        
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        
+        MKMapItem.openMaps(with: mapItems, launchOptions:launchOptions)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -12,6 +12,8 @@ import Alamofire
 class ServerManager {
     
     static var dataBasePath: String?
+    static var photoPath: String?
+    
     static func postRequest(_ phone: String,_ completion: @escaping (_ : Response?, _ : Error?) -> Void) {
         StaticMethod.PKHUD.viewProgressHUD()
         let url = URL(string: (Constants.LogInConstants.URL + Constants.LogInConstants.endUrl))!
@@ -65,34 +67,20 @@ class ServerManager {
         }
     }
     
-    static func getDataBase() -> Data? {
-        var data: Data?
-        do {
-            data = try Data(contentsOf: URL(string: Constants.dataBase.URLDB)!)
-            if let data = data {
-                return data
+    static func downloadPhoto(_ url: String) {
+        let downloadsUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileUrl = downloadsUrl.appendingPathComponent("profilePhoto.png")
+        let fManager = FileManager()
+        photoPath = fileUrl.path
+        if !fManager.fileExists(atPath: fileUrl.path) {
+            let destination: DownloadRequest.DownloadFileDestination = { _,_ in
+                return(fileUrl, [.removePreviousFile, .createIntermediateDirectories])
             }
-        } catch {
-            debugPrint(error)
-        }
-        return nil
-    }
-    
-    static func saveDataBase() {
-        do {
-            let dataOfDataBase = self.getDataBase()!
-            let fileManager = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            let fileURL = fileManager.appendingPathComponent("quadrant_7167.db")
-            debugPrint("DATABASEPATH: " + fileURL.path)
-            let writeData = String(data: dataOfDataBase, encoding: .ascii)
-            do {
-                //writeFile
-                try writeData?.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
-            } catch {
-                debugPrint(error)
+            Alamofire.download(url, to: destination).response { response in
+                if response.error == nil, let filePath = response.destinationURL?.path {
+                    debugPrint(filePath)
+                }
             }
-        } catch {
-            debugPrint(error)
         }
     }
     
