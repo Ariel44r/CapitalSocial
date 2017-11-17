@@ -12,7 +12,8 @@ import MapKit
 class MapKitViewController: UIViewController, MKMapViewDelegate {
 
     //MARK: Variables
-    
+    let rightButton = UIButton(type: .contactAdd)
+    var selectedAnnotation: Annotation?
     //Outlets
     @IBOutlet weak var MapView: MKMapView!
     
@@ -34,25 +35,29 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        if let selectedAnnotation = view.annotation as? Annotation {
-            displayalert("Obtener Dirección de \(selectedAnnotation.title!)?", selectedAnnotation)
+        selectedAnnotation = view.annotation as? Annotation
+        rightButton.addTarget(self, action:#selector(handleRegister(_:)), for: .touchUpInside)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is MKUserLocation) {
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: String(annotation.hash))
+            rightButton.tag = annotation.hash
+            pinView.animatesDrop = false
+            pinView.canShowCallout = true
+            pinView.rightCalloutAccessoryView = rightButton
+            return pinView
+        }
+        else {
+            return nil
         }
     }
     
-    func displayalert(_ userMessage:String, _ annotation: Annotation) {
-        
-        let myalert = UIAlertController(title:"Aviso", message:userMessage, preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title:"ok", style: UIAlertActionStyle.default, handler:{ (action: UIAlertAction!) in
-            //callMaps
-            self.goToMaps(annotation)
-        })
-        myalert.addAction(okAction)
-        
-        let cancelaction = UIAlertAction(title:"cancel", style: UIAlertActionStyle.default, handler:nil)
-        myalert.addAction(cancelaction)
-        
-        self.present(myalert, animated:true, completion:nil)
+    @objc func handleRegister(_: Annotation) {
+        if let selectedAnnotation = self.selectedAnnotation{
+            self.goToMaps(selectedAnnotation)
+            debugPrint("buttonSelected")
+        }
     }
     
     func goToMaps(_ annotation: Annotation) {
