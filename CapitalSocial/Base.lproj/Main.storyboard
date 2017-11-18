@@ -211,7 +211,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="550"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-w8-SpK">
-                                        <rect key="frame" x="0.0" y="-2" width="375" height="550"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="493"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tL2-Pk-3Ah">
                                             <size key="itemSize" width="50" height="50"/>
@@ -263,20 +263,32 @@
                                             <outlet property="delegate" destination="2mT-VF-w0n" id="Naj-nT-PtH"/>
                                         </connections>
                                     </collectionView>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-9v-ALh">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="2mT-VF-w0n" id="xKd-rz-nNg"/>
+                                        </connections>
+                                    </searchBar>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="vB6-9v-ALh" firstAttribute="width" secondItem="Mry-rL-lfh" secondAttribute="width" id="1tO-Sz-vvo"/>
                                     <constraint firstAttribute="trailing" secondItem="bSE-w8-SpK" secondAttribute="trailing" id="5KV-zW-OTl"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="width" secondItem="Mry-rL-lfh" secondAttribute="width" id="C4Z-i9-hpW"/>
+                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="vB6-9v-ALh" secondAttribute="bottom" id="GO8-cg-jR2"/>
+                                    <constraint firstItem="vB6-9v-ALh" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" id="Vcl-49-7zW"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" id="ajg-Ta-tg1"/>
-                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="height" secondItem="Mry-rL-lfh" secondAttribute="height" id="iOe-r5-ad9"/>
-                                    <constraint firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" id="mrd-Jg-c38"/>
+                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="height" secondItem="Mry-rL-lfh" secondAttribute="height" constant="-57" id="iOe-r5-ad9"/>
+                                    <constraint firstAttribute="trailing" secondItem="vB6-9v-ALh" secondAttribute="trailing" id="kIv-at-Snt"/>
+                                    <constraint firstItem="vB6-9v-ALh" firstAttribute="top" secondItem="Mry-rL-lfh" secondAttribute="top" id="m50-E2-OJe"/>
+                                    <constraint firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" constant="2" id="mrd-Jg-c38"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-oP-kFs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Promo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-xb-llO">
-                                        <rect key="frame" x="87" y="28" width="200" height="30"/>
+                                        <rect key="frame" x="87" y="28" width="200" height="31"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -305,7 +317,7 @@
                             <constraint firstItem="PRI-F8-STP" firstAttribute="trailing" secondItem="Mry-rL-lfh" secondAttribute="trailing" id="fKs-Je-ZV9"/>
                             <constraint firstItem="Mry-rL-lfh" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" id="mkE-Mb-w8H"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="width" secondItem="PRI-F8-STP" secondAttribute="width" id="nVJ-Xo-ehM"/>
-                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="UDu-oP-kFs" secondAttribute="bottom" id="v8f-eN-B34"/>
+                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="UDu-oP-kFs" secondAttribute="bottom" constant="57" id="v8f-eN-B34"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" id="wpu-cD-Ghz"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="width" secondItem="rmG-Fo-zAS" secondAttribute="width" id="xIo-qi-1oQ"/>
                         </constraints>
@@ -315,6 +327,7 @@
                     <connections>
                         <outlet property="promoCollection" destination="bSE-w8-SpK" id="hxH-nW-5jl"/>
                         <outlet property="scrollView" destination="Mry-rL-lfh" id="fkO-R4-IJd"/>
+                        <outlet property="searchBar" destination="vB6-9v-ALh" id="8hn-2m-mnG"/>
                         <outlet property="topView" destination="UDu-oP-kFs" id="R7l-fq-ONL"/>
                         <segue destination="udc-8D-KPS" kind="modal" identifier="segueDetail" modalTransitionStyle="flipHorizontal" id="1oH-tb-qVX"/>
                     </connections>

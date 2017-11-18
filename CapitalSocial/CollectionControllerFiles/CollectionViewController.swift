@@ -13,17 +13,18 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     var promos = [String]()
     let reusableIdentifier = "Cell"
     let itemsPerRow: CGFloat = 2
-    let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
-    var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+    let sectionInsets = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 50.0, right: 20.0)
+    var tapGesture: UITapGestureRecognizer? // = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
     var promoName: String?
     var cordinate: CGPoint?
     let transition = TransitionShare()
-
+    var searchActive: Bool = false
     
     //MARK: outlets
     @IBOutlet weak var promoCollection: UICollectionView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,10 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addObservers()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        setScroll()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -56,7 +61,11 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
             self.promoCollection.reloadData()
         }
     }
-
+    
+    func setScroll() {
+        let cgPoint = CGPoint(x: 0,y: 80)
+       scrollView.setContentOffset(cgPoint, animated: true)
+    }
 }
 
 //MARK: DataSource
@@ -106,6 +115,29 @@ extension CollectionViewController : UICollectionViewDelegateFlowLayout {
     
 }
 
+//MARK: UISearchBarDelegate
+extension CollectionViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        refreshPromos(searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchActive = false
+    }
+}
+
 //MARK: UITextFieldDelegate
 extension CollectionViewController: UITextFieldDelegate {
     
@@ -148,7 +180,8 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: Notification) {
-        view.addGestureRecognizer(self.tapGesture)
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+        view.addGestureRecognizer(self.tapGesture!)
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 return
@@ -158,9 +191,9 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillHide(notification: Notification){
-        //view.removeGestureRecognizer(self.tapGesture!)
-        view.removeGestureRecognizer(self.tapGesture)
+        view.removeGestureRecognizer(self.tapGesture!)
         scrollView.contentInset = UIEdgeInsets.zero
+        setScroll()
     }
     
 }
