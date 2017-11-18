@@ -127,7 +127,7 @@
             </objects>
             <point key="canvasLocation" x="344.80000000000001" y="111.99400299850076"/>
         </scene>
-        <!--Sitios de interés-->
+        <!--Siitios de Interès-->
         <scene sceneID="ixH-An-fVt">
             <objects>
                 <viewController id="Iit-om-Wre" customClass="MapKitViewController" customModule="CapitalSocial" customModuleProvider="target" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ezE-PN-Mqb"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sitios de interés" id="smu-r9-4qO"/>
+                    <tabBarItem key="tabBarItem" title="Siitios de Interès" image="map25-1" id="smu-r9-4qO"/>
                     <connections>
                         <outlet property="MapView" destination="i3H-Tr-bWH" id="F5r-ml-XhN"/>
                     </connections>
@@ -319,7 +319,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PRI-F8-STP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Promociones" id="QDb-lB-LhX"/>
+                    <tabBarItem key="tabBarItem" title="Promociones" image="promo25" id="QDb-lB-LhX"/>
                     <connections>
                         <outlet property="promoCollection" destination="bSE-w8-SpK" id="hxH-nW-5jl"/>
                         <outlet property="scrollView" destination="Mry-rL-lfh" id="fkO-R4-IJd"/>
@@ -645,7 +645,7 @@
             </objects>
             <point key="canvasLocation" x="3508" y="-675"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Preferencias-->
         <scene sceneID="JYS-4c-Vyi">
             <objects>
                 <viewController id="gff-Um-yE2" customClass="SettingsViewController" customModule="CapitalSocial" customModuleProvider="target" sceneMemberID="viewController">
@@ -755,7 +755,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iOf-jI-Tts"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Ln3-5m-6M6"/>
+                    <tabBarItem key="tabBarItem" title="Preferencias" image="set25" id="Ln3-5m-6M6"/>
                     <connections>
                         <outlet property="labelName" destination="qie-Ga-wEX" id="ARp-dQ-9gE"/>
                         <outlet property="userImage" destination="W7u-VK-BwE" id="Nk7-7y-hBd"/>
@@ -775,6 +775,9 @@
         <image name="LogoPapaJohns@1.5x" width="284" height="182"/>
         <image name="LogoSplashScreen" width="596" height="234"/>
         <image name="PromoBenavides.png" width="356" height="234"/>
+        <image name="map25-1" width="25" height="25"/>
+        <image name="promo25" width="25" height="25"/>
+        <image name="set25" width="25" height="25"/>
         <image name="telefono" width="32" height="30"/>
         <image name="whatsapp" width="180" height="176"/>
     </resources>
