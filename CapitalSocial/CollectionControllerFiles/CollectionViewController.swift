@@ -123,10 +123,14 @@ extension CollectionViewController: UISearchBarDelegate{
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true
+        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
+        view.addGestureRecognizer(self.tapGesture!)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchActive = false
+        view.removeGestureRecognizer(self.tapGesture!)
+        setScroll()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -180,20 +184,16 @@ extension CollectionViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(notification: Notification) {
-        self.tapGesture = UITapGestureRecognizer(target: self, action: #selector (didTapView(gesture:)))
-        view.addGestureRecognizer(self.tapGesture!)
         guard let userInfo = notification.userInfo,
-            let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-                return
+        let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
         }
         let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height,right: 0)
         scrollView.contentInset = contentInset
     }
     
-    func keyboardWillHide(notification: Notification){
-        view.removeGestureRecognizer(self.tapGesture!)
+    func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = UIEdgeInsets.zero
-        setScroll()
     }
     
 }
