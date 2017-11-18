@@ -63,7 +63,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func setScroll() {
-        let cgPoint = CGPoint(x: 0,y: 80)
+        let cgPoint = CGPoint(x: 0,y: 100)
        scrollView.setContentOffset(cgPoint, animated: true)
     }
 }
@@ -140,6 +140,44 @@ extension CollectionViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false
     }
+    
+    func addObservers() {
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillShow(notification: notification)
+        }
+        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
+            notification in
+            self.keyboardWillHide(notification: notification)
+        }
+    }
+    
+    func removeObservers() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+                return
+        }
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height,right: 0)
+        scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification: Notification) {
+        scrollView.contentInset = UIEdgeInsets.zero
+    }
+}
+
+extension CollectionViewController: UIScrollViewDelegate {
+    
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == promoCollection {
+            setScroll()
+        }
+    }
 }
 
 //MARK: UITextFieldDelegate
@@ -166,34 +204,6 @@ extension CollectionViewController: UITextFieldDelegate {
             textField.resignFirstResponder()
         }
         return true
-    }
-    
-    func addObservers() {
-        NotificationCenter.default.addObserver(forName: .UIKeyboardWillShow, object: nil, queue: nil) {
-            notification in
-            self.keyboardWillShow(notification: notification)
-        }
-        NotificationCenter.default.addObserver(forName: .UIKeyboardWillHide, object: nil, queue: nil) {
-            notification in
-            self.keyboardWillHide(notification: notification)
-        }
-    }
-    
-    func removeObservers() {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
-    func keyboardWillShow(notification: Notification) {
-        guard let userInfo = notification.userInfo,
-        let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: frame.height,right: 0)
-        scrollView.contentInset = contentInset
-    }
-    
-    func keyboardWillHide(notification: Notification) {
-        scrollView.contentInset = UIEdgeInsets.zero
     }
     
 }
