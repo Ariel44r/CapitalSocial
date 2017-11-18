@@ -171,41 +171,11 @@ extension CollectionViewController: UISearchBarDelegate{
 }
 
 extension CollectionViewController: UIScrollViewDelegate {
-    
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == promoCollection {
             setScroll()
         }
     }
-}
-
-//MARK: UITextFieldDelegate
-extension CollectionViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var newText:String
-        if(string != ""){
-            newText = textField.text! + string
-        }else{
-            newText = textField.text!.substring(to: textField.text!.index(before: textField.text!.endIndex))
-        }
-        refreshPromos(newText)
-        return true
-    }
-    
-    //MARK: manageKeyboard
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // Try to find next responder
-        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
-            nextField.becomeFirstResponder()
-        } else {
-            // Not found, so remove keyboard.
-            textField.resignFirstResponder()
-        }
-        return true
-    }
-    
 }
 
 //MARK: Segue
