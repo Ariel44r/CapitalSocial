@@ -10,5 +10,6 @@ target 'CapitalSocial' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'RealmSwift'
 end
 

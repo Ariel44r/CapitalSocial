@@ -8,18 +8,23 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class MapKitViewController: UIViewController, MKMapViewDelegate {
 
     //MARK: Variables
     let rightButton = UIButton(type: .contactAdd)
     var selectedAnnotation: Annotation?
+    let realm = try! Realm()
+    
     //Outlets
     @IBOutlet weak var MapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapPlace()
+        deleteFromRealm("latitude > 19")
+        realmQuery()
         // Do any additional setup after loading the view.
     }
     
@@ -36,7 +41,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         selectedAnnotation = view.annotation as? Annotation
-        rightButton.addTarget(self, action:#selector(handleRegister(_:)), for: .touchUpInside)
+        rightButton.addTarget(self, action:#selector(annotationButton), for: .touchUpInside)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -53,11 +58,36 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
-    @objc func handleRegister(_: Annotation) {
+    @objc func annotationButton() {
         if let selectedAnnotation = self.selectedAnnotation{
             self.goToMaps(selectedAnnotation)
-            debugPrint("buttonSelected")
+            addToRealm(selectedAnnotation)
         }
+    }
+    
+    func addToRealm(_ annotattion: Annotation) {
+        let annotationObjc = AnnotationObj()
+        annotationObjc.title = annotattion.title!
+        annotationObjc.locationName = annotattion.locationName
+        annotationObjc.latitude = annotattion.coordinate.latitude
+        annotationObjc.longitude = annotattion.coordinate.longitude
+        realm.beginWrite()
+        realm.add(annotationObjc)
+        try! realm.commitWrite()
+        realmQuery()
+    }
+    
+    func deleteFromRealm(_ string: String) {
+        realm.beginWrite()
+        let objectToDelete = realm.objects(AnnotationObj.self).filter(NSPredicate(format: string))
+        realm.delete(objectToDelete)
+        try! realm.commitWrite()
+    }
+    
+    func realmQuery() {
+        let results = realm.objects(AnnotationObj.self).filter(NSPredicate(format: "latitude > 19"))
+        debugPrint(results.count)
+        debugPrint(results)
     }
     
     func goToMaps(_ annotation: Annotation) {

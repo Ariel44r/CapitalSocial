@@ -211,7 +211,7 @@
                                 <rect key="frame" x="0.0" y="68" width="375" height="550"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bSE-w8-SpK">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="510"/>
+                                        <rect key="frame" x="0.0" y="8" width="375" height="558"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="tL2-Pk-3Ah">
                                             <size key="itemSize" width="50" height="50"/>
@@ -263,7 +263,7 @@
                                             <outlet property="delegate" destination="2mT-VF-w0n" id="Naj-nT-PtH"/>
                                         </connections>
                                     </collectionView>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-9v-ALh">
+                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="vB6-9v-ALh">
                                         <rect key="frame" x="-2" y="-9" width="375" height="73"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -275,20 +275,20 @@
                                     <constraint firstItem="vB6-9v-ALh" firstAttribute="width" secondItem="Mry-rL-lfh" secondAttribute="width" id="1tO-Sz-vvo"/>
                                     <constraint firstAttribute="trailing" secondItem="bSE-w8-SpK" secondAttribute="trailing" id="5KV-zW-OTl"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="width" secondItem="Mry-rL-lfh" secondAttribute="width" id="C4Z-i9-hpW"/>
-                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="vB6-9v-ALh" secondAttribute="bottom" constant="-8" id="GO8-cg-jR2"/>
+                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="vB6-9v-ALh" secondAttribute="bottom" constant="-56" id="GO8-cg-jR2"/>
                                     <constraint firstItem="vB6-9v-ALh" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" constant="-2" id="Vcl-49-7zW"/>
                                     <constraint firstItem="bSE-w8-SpK" firstAttribute="leading" secondItem="Mry-rL-lfh" secondAttribute="leading" id="ajg-Ta-tg1"/>
-                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="height" secondItem="Mry-rL-lfh" secondAttribute="height" constant="-40" id="iOe-r5-ad9"/>
+                                    <constraint firstItem="bSE-w8-SpK" firstAttribute="height" secondItem="Mry-rL-lfh" secondAttribute="height" constant="8" id="iOe-r5-ad9"/>
                                     <constraint firstAttribute="trailing" secondItem="vB6-9v-ALh" secondAttribute="trailing" constant="2" id="kIv-at-Snt"/>
                                     <constraint firstItem="vB6-9v-ALh" firstAttribute="top" secondItem="Mry-rL-lfh" secondAttribute="top" constant="-9" id="m50-E2-OJe"/>
-                                    <constraint firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" constant="1" id="mrd-Jg-c38"/>
+                                    <constraint firstAttribute="bottom" secondItem="bSE-w8-SpK" secondAttribute="bottom" constant="-16" id="mrd-Jg-c38"/>
                                 </constraints>
                             </scrollView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-oP-kFs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDu-oP-kFs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Capital Social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-3S-HDR">
-                                        <rect key="frame" x="94" y="28" width="187" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital Social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-3S-HDR">
+                                        <rect key="frame" x="94" y="28" width="187" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -296,7 +296,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.31961371160000002" blue="0.5980192661" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Bmx-3S-HDR" secondAttribute="trailing" constant="94" id="U1u-P6-rxZ"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bmx-3S-HDR" secondAttribute="trailing" id="U1u-P6-rxZ"/>
                                     <constraint firstItem="Bmx-3S-HDR" firstAttribute="top" secondItem="UDu-oP-kFs" secondAttribute="top" constant="28" id="UtK-Yd-qc2"/>
                                     <constraint firstAttribute="bottom" secondItem="Bmx-3S-HDR" secondAttribute="bottom" constant="5" id="av4-mc-d8A"/>
                                     <constraint firstItem="Bmx-3S-HDR" firstAttribute="leading" secondItem="UDu-oP-kFs" secondAttribute="leading" constant="94" id="ilL-SH-ACU"/>
@@ -313,7 +313,7 @@
                             <constraint firstItem="PRI-F8-STP" firstAttribute="trailing" secondItem="Mry-rL-lfh" secondAttribute="trailing" id="fKs-Je-ZV9"/>
                             <constraint firstItem="Mry-rL-lfh" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" id="mkE-Mb-w8H"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="width" secondItem="PRI-F8-STP" secondAttribute="width" id="nVJ-Xo-ehM"/>
-                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="UDu-oP-kFs" secondAttribute="bottom" constant="52.5" id="v8f-eN-B34"/>
+                            <constraint firstItem="bSE-w8-SpK" firstAttribute="top" secondItem="UDu-oP-kFs" secondAttribute="bottom" constant="4.5" id="v8f-eN-B34"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="leading" secondItem="PRI-F8-STP" secondAttribute="leading" id="wpu-cD-Ghz"/>
                             <constraint firstItem="UDu-oP-kFs" firstAttribute="width" secondItem="rmG-Fo-zAS" secondAttribute="width" id="xIo-qi-1oQ"/>
                         </constraints>
@@ -330,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRX-Ri-jgn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="-675"/>
+            <point key="canvasLocation" x="1888.8" y="-675.11244377811101"/>
         </scene>
         <!--Item-->
         <scene sceneID="PBz-Zx-VAa">

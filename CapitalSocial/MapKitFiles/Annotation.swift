@@ -8,6 +8,7 @@
 
 import Foundation
 import MapKit
+import RealmSwift
 
 class Annotation: NSObject, MKAnnotation {
     let title: String?
@@ -20,4 +21,11 @@ class Annotation: NSObject, MKAnnotation {
         self.coordinate = coordinate
         super.init()
     }
+}
+
+class AnnotationObj: Object {
+    @objc dynamic var title: String = ""
+    @objc dynamic var locationName: String = ""
+    @objc dynamic var latitude: Double = 0
+    @objc dynamic var longitude: Double = 0
 }
