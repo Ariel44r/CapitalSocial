@@ -12,6 +12,8 @@
 		4F54DB7B1FAAAEF800412F60 /* Promo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54DB7A1FAAAEF800412F60 /* Promo.swift */; };
 		4F54FFFB1FAE6C710036F906 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */; };
 		4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */; };
+		4F60B06B1FC500170033908F /* AnnotationsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F60B06A1FC500170033908F /* AnnotationsTableView.swift */; };
+		4F60B06F1FC50DE00033908F /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F60B06E1FC50DE00033908F /* RealmManager.swift */; };
 		4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F63B36C1FA5C6510053F974 /* ResponseObj.swift */; };
 		4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F87EAF31FB121FF0076B58D /* Annotation.swift */; };
 		4FADCB411FBBAD3D0091AA0D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FADCB401FBBAD3D0091AA0D /* SettingsViewController.swift */; };
@@ -62,6 +64,8 @@
 		4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		4F5AEB5C1FAD3320000A8C4C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4F5AEB5F1FAD3691000A8C4C /* PromoBenavides.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PromoBenavides.png; path = ../../../../../Downloads/ElementosPruebaAndroidV3/PromoBenavides.png; sourceTree = "<group>"; };
+		4F60B06A1FC500170033908F /* AnnotationsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationsTableView.swift; sourceTree = "<group>"; };
+		4F60B06E1FC50DE00033908F /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmManager.swift; path = CapitalSocial/DataBase/RealmManager.swift; sourceTree = SOURCE_ROOT; };
 		4F63B36C1FA5C6510053F974 /* ResponseObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObj.swift; sourceTree = "<group>"; };
 		4F87EAF31FB121FF0076B58D /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		4FADCB401FBBAD3D0091AA0D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			children = (
 				4F54FFFA1FAE6C710036F906 /* MapKitViewController.swift */,
 				4F87EAF31FB121FF0076B58D /* Annotation.swift */,
+				4F60B06A1FC500170033908F /* AnnotationsTableView.swift */,
 			);
 			path = MapKitFiles;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				4FC0C9CE1FA43F4900133254 /* AlamoFire.swift */,
 				4FC971581FB13A4800497606 /* DataBaseManager.swift */,
 				4F63B36C1FA5C6510053F974 /* ResponseObj.swift */,
+				4F60B06E1FC50DE00033908F /* RealmManager.swift */,
 			);
 			path = ServerManager;
 			sourceTree = "<group>";
@@ -501,6 +507,7 @@
 				4FBE26C41FBBB58700AFCC7F /* FacebookData.swift in Sources */,
 				4FB4B8091FB2BC1C003E098B /* TransitionShare.swift in Sources */,
 				4FADCB411FBBAD3D0091AA0D /* SettingsViewController.swift in Sources */,
+				4F60B06B1FC500170033908F /* AnnotationsTableView.swift in Sources */,
 				4FBE26C71FBBB65900AFCC7F /* DataPersistence.swift in Sources */,
 				4F63B36D1FA5C6510053F974 /* ResponseObj.swift in Sources */,
 				4FC0C9CF1FA43F4900133254 /* AlamoFire.swift in Sources */,
@@ -508,6 +515,7 @@
 				4F5AEB5D1FAD3320000A8C4C /* DetailViewController.swift in Sources */,
 				4F1F2B031FA405B60032D6A0 /* Utils.swift in Sources */,
 				4F87EAF41FB121FF0076B58D /* Annotation.swift in Sources */,
+				4F60B06F1FC50DE00033908F /* RealmManager.swift in Sources */,
 				4FCFC5BD1FA7DAB400A1C091 /* PromosCell.swift in Sources */,
 				4FC971591FB13A4800497606 /* DataBaseManager.swift in Sources */,
 			);

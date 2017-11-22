@@ -69,6 +69,9 @@ class StaticMethod {
         static func textHUD(_ text: String) {
             HUD.flash(.label(text),delay: 1.5)
         }
+        static func annotationSaved() {
+            HUD.flash(.success, delay: 0.5)
+        }
     }
     struct StringProcess {
         static func replaceStringWithString(_ string: String, _ ocurrensOf: String, _ replaceWith: String) -> String {

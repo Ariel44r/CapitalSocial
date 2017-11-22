@@ -19,12 +19,13 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
     
     //Outlets
     @IBOutlet weak var MapView: MKMapView!
+    @IBAction func myAnnotationsButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "AnnotationsSegue", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapPlace()
-        deleteFromRealm("latitude > 19")
-        realmQuery()
         // Do any additional setup after loading the view.
     }
     
@@ -59,35 +60,7 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
     }
     
     @objc func annotationButton() {
-        if let selectedAnnotation = self.selectedAnnotation{
-            self.goToMaps(selectedAnnotation)
-            addToRealm(selectedAnnotation)
-        }
-    }
-    
-    func addToRealm(_ annotattion: Annotation) {
-        let annotationObjc = AnnotationObj()
-        annotationObjc.title = annotattion.title!
-        annotationObjc.locationName = annotattion.locationName
-        annotationObjc.latitude = annotattion.coordinate.latitude
-        annotationObjc.longitude = annotattion.coordinate.longitude
-        realm.beginWrite()
-        realm.add(annotationObjc)
-        try! realm.commitWrite()
-        realmQuery()
-    }
-    
-    func deleteFromRealm(_ string: String) {
-        realm.beginWrite()
-        let objectToDelete = realm.objects(AnnotationObj.self).filter(NSPredicate(format: string))
-        realm.delete(objectToDelete)
-        try! realm.commitWrite()
-    }
-    
-    func realmQuery() {
-        let results = realm.objects(AnnotationObj.self).filter(NSPredicate(format: "latitude > 19"))
-        debugPrint(results.count)
-        debugPrint(results)
+        actionSheetFuncImage()
     }
     
     func goToMaps(_ annotation: Annotation) {
@@ -100,6 +73,38 @@ class MapKitViewController: UIViewController, MKMapViewDelegate {
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         
         MKMapItem.openMaps(with: mapItems, launchOptions:launchOptions)
+    }
+    
+    func actionSheetFuncImage() {
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let openInMaps = UIAlertAction(title: "Open in Maps", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            debugPrint("open in maps")
+            if let selectedAnnotation = self.selectedAnnotation{
+                self.goToMaps(selectedAnnotation)
+            }
+        })
+        
+        let saveAnnotation = UIAlertAction(title: "Save Annotation", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            debugPrint("save annotation")
+            if let selectedAnnotation = self.selectedAnnotation{
+                RealmManager.addToRealm(selectedAnnotation)
+            }
+        })
+    
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        
+        optionMenu.addAction(openInMaps)
+        optionMenu.addAction(saveAnnotation)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
     }
     
     /*

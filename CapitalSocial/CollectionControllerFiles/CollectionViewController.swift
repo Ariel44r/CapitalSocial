@@ -28,7 +28,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            StaticMethod.PKHUD.successHUD()
+        //StaticMethod.PKHUD.successHUD()
         // Do any additional setup after loading the view.
         refreshPromos("")
         
